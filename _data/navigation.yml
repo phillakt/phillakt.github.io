@@ -1,0 +1,12 @@
+- name: Главная
+  link: /index.html
+- name: Свежак
+  link: /fresh.html
+- name: Заметки
+  link: /notes.html
+- name: Дизайн
+  link: /design.html
+- name: Контакты
+  link: /contacts.html
+
+

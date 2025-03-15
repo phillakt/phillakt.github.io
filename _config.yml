@@ -1,0 +1,29 @@
+url: "https://philla.github.io"
+baseurl: "/" 
+title: "Блог"
+description: "Этот блог создан для удобного и быстрого доступа к информации, которая используется в повседневной работе."
+author: "Мельников Дмитрий"
+livereload: true
+permalink: /:categories/:year/:month/:day/:title:output_ext
+exclude: [
+  src/,
+  node_modules/,
+  gemfiles/,
+  Gemfile,
+  Gemfile.lock,
+  vendor/bundle/,
+  vendor/cache/,
+  vendor/gems/,
+  vendor/ruby/,
+  .sass-cache/,
+  .jekyll-cache/,
+  gulpfile.js,
+  package-lock.json,
+  package.json,
+  README.md,
+]
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+

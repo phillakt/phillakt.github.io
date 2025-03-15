@@ -1,0 +1,11 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+src/
+node_modules/
+gulpfile.js
+package-lock.json
+package.json
+README.md
