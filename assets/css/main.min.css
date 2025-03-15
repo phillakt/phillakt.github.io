@@ -1,1 +1,13 @@
-
+.reticle{--aug-all-width:150px;color:#00bfff;--reticle-color:currentColor;--reticle-size:calc(var(--aug-all-width) * 0.25);--aug-border-bg:radial-gradient(
+    circle at top center,
+    var(--reticle-color) var(--reticle-size),
+    transparent var(--reticle-size)
+  ),radial-gradient(
+    circle at bottom 13.92% right 6.89%,
+    var(--reticle-color) var(--reticle-size),
+    transparent var(--reticle-size)
+  ),radial-gradient(
+    circle at bottom 13.92% left 6.89%,
+    var(--reticle-color) var(--reticle-size),
+    transparent var(--reticle-size)
+  );transform-origin:50% 56%;transform:rotateZ(0);transition:transform .75s ease-out,color .75s ease-out;background:radial-gradient(circle at 50% 56%,var(--reticle-color) .25rem,transparent .25rem)}.reticle:hover{transform:rotateZ(720deg);color:red}
