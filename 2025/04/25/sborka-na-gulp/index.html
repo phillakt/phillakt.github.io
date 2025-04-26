@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -19,7 +18,7 @@
 <meta property="og:description" content="Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML">
 <meta property="og:locale" content="ru_RU">
 <meta property="article:published_time" content="2025-04-25T20:34:33.000Z">
-<meta property="article:modified_time" content="2025-04-26T07:40:10.675Z">
+<meta property="article:modified_time" content="2025-04-26T21:15:33.709Z">
 <meta property="article:author" content="Philla">
 <meta property="article:tag" content="gulp">
 <meta property="article:tag" content="front-end">
@@ -70,31 +69,42 @@
       </div>
     </header>
           
-<section class="article-detail mt60 mb60">
+          <section class="article-detail mt60 mb60">
   <div class="container-md">
-      <article class="article-detail__content">
-          <h1 class="article-detail__title">Сборка веб-приложений, основанная на Gulp</h1>
-
-          <div class="article-detail__meta">
-              <div class="article-detail__date">2025-04-25</div>
-              <div class="article-detail__tags">
-                
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+  <article class="mb60">
+    <div class="container-md">
+      <div class="mb30">
+        <img src="/images/posts/sborka-na-gulp/previmg/sborka-na-gulp-previmg.svg" alt="Сборка веб-приложений, основанная на Gulp">
+      </div>
+      <h1 class="article-detail__title">Сборка веб-приложений, основанная на Gulp</h1>
+      <div class="article-detail__meta">
+        <div class="article-detail__date">2025-04-25</div>
+        <div class="article-detail__tags">
+          
   <ul class="article__meta--tag-list" itemprop="keywords"><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/front-end/" rel="tag">front-end</a></li><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/gulp/" rel="tag">gulp</a></li></ul>
 
-              </div>
-          </div>
-
-          <h2 id="Описание-проекта"><a href="#Описание-проекта" class="headerlink" title="Описание проекта"></a>Описание проекта</h2><p>Сборка веб-приложений, основанная на Gulp.<br>Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML</p>
+        </div>
+      </div>
+      <div class="article-detail__content">
+        <h2 id="Описание-проекта"><a href="#Описание-проекта" class="headerlink" title="Описание проекта"></a>Описание проекта</h2><p>Сборка веб-приложений, основанная на Gulp.<br>Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML</p>
 <h2 id="Установка"><a href="#Установка" class="headerlink" title="Установка"></a>Установка</h2><ol>
-<li><p>Клонируйте репозиторий:<br><code>git clone https://github.com/ваш-username/название-репозитория.git</code></p>
+<li><p>Клонируйте репозиторий:<br><code>git clone https://github.com/phillakt/gulp-build.git</code></p>
 </li>
-<li><p>Перейдите в директорию проекта:<br>cd название-репозитория</p>
+<li><p>Перейдите в директорию проекта:<br><code>cd my-project</code> («my-project» название-проекта)</p>
+</li>
+<li><p>Рекомендуемые версии node и npm:<br><code>node -v</code>: 16.20.2<br><code>npm -v</code>: 8.19.4</p>
 </li>
 <li><p>Установите зависимости:<br><code>npm install</code><br>Если не устанавливаются зависимости то указываем флаги:<br><code>npm i --force</code> или <code>npm i --legacy-peer-deps</code></p>
 </li>
 </ol>
-<h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>Для обычной сборки default: <code>gulp</code><br>Для production сборки: <code>gulp prod</code></p>
-<h2 id="Структура-проекта"><a href="#Структура-проекта" class="headerlink" title="Структура проекта"></a>Структура проекта</h2><p>Основная структура проекта:<br>project&#x2F; ├── src&#x2F; │ ├── js&#x2F; │ ├── scss&#x2F; │ └── index.html ├── dist&#x2F; ├── gulpfile.js └── package.json</p>
+<h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>Для обычной сборки default: <code>gulp</code><br>Для production сборки: <code>gulp build</code></p>
+<h2 id="Структура-проекта"><a href="#Структура-проекта" class="headerlink" title="Структура проекта"></a>Структура проекта</h2><p>Основная структура проекта:<br>project&#x2F;<br>├── src&#x2F;<br>│ ├── js&#x2F;<br>│ ├── scss&#x2F;<br>│ └── index.html<br>├── dist&#x2F;<br>├── gulpfile.js<br>├── package-lock.json<br>└── package.json</p>
 <h2 id="Задачи-Gulp"><a href="#Задачи-Gulp" class="headerlink" title="Задачи Gulp"></a>Задачи Gulp</h2><ol>
 <li><code>clean</code>: Удаляет директорию dist для чистой сборки.</li>
 <li><code>minifyHtml</code>: Минифицирует HTML файлы.</li>
@@ -139,15 +149,15 @@
 <li>Удобный рабочий процесс с автоматическим обновлением браузера.</li>
 <li>Легкого расширяется функционал сборки.</li>
 </ol>
-<h2 id="Лицензия"><a href="#Лицензия" class="headerlink" title="Лицензия"></a>Лицензия</h2><p>Этот проект лицензирован под MIT License - см. файл <a href="LICENSE">LICENSE</a> для подробностей.</p>
 
-
-      </article>
-      <div class="container-md">
-        <div class="article-detail__back_link"></div>
-        <a href="/" class="btn btn__back--l-arrow mt60">
-          <span class="btn__back--l-arrow-ico">&lt;</span> назад
-        </a>
+      </div>
+    </div>
+  </article>
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
     </div>
   </div>
 </section>
@@ -155,43 +165,43 @@
         </section>
 
         <section class="section-bottom">
-            <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
-                <div class="container">
-                    <div class="footer__grid">
-                        <div class="footer__column">
-                            <div class="footer__logo mb30">
-                                <a href="/">
-                                    Philla
-                                  </a>
-                            </div>
-                        </div>
-                        <div class="footer__column">
-                            <div class="footer__menu">
-                                <ul>
-                                    
-                                        <li>
-                                          <a href="/archives/">
-                                            Архив
-                                          </a>
-                                        </li>
-                                    
-                                        <li>
-                                          <a href="/contacts/">
-                                            Контакты
-                                          </a>
-                                        </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-
+    <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo mb30">
+                        <a href="/">
+                            Philla
+                          </a>
                     </div>
                 </div>
-            </footer>
-        </section>
+                <div class="footer__column">
+                    <div class="footer__menu">
+                        <ul>
+                            
+                                <li>
+                                  <a href="/archives/">
+                                    Архив
+                                  </a>
+                                </li>
+                            
+                                <li>
+                                  <a href="/contacts/">
+                                    Контакты
+                                  </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</section>
     </main>
 
-    <script src="./js/main.min.js"></script>
+    <script src="/js/main.min.js"></script>
 </body>
 
 </html>
