@@ -18,7 +18,7 @@
 <meta property="og:description" content="Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML">
 <meta property="og:locale" content="ru_RU">
 <meta property="article:published_time" content="2025-04-25T20:34:33.000Z">
-<meta property="article:modified_time" content="2025-04-27T19:21:57.255Z">
+<meta property="article:modified_time" content="2025-04-27T20:02:26.301Z">
 <meta property="article:author" content="Philla">
 <meta property="article:tag" content="gulp">
 <meta property="article:tag" content="front-end">
@@ -101,12 +101,46 @@
 <p>Установите зависимости:<br>“npm install”<br>Если не устанавливаются зависимости то указываем флаги:<br>“npm i –force” или “npm i –legacy-peer-deps”</p>
 <h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>Для обычной сборки default: “gulp”<br>Для production сборки: “gulp build”</p>
 <h2 id="Структура-проекта"><a href="#Структура-проекта" class="headerlink" title="Структура проекта"></a>Структура проекта</h2><p>Основная структура проекта:<br>project&#x2F;<br>├── src&#x2F;<br>│ ├── js&#x2F;<br>│ ├── scss&#x2F;<br>│ └── index.html<br>├── dist&#x2F;<br>├── gulpfile.js<br>├── package-lock.json<br>└── package.json</p>
-<h2 id="Задачи-Gulp"><a href="#Задачи-Gulp" class="headerlink" title="Задачи Gulp"></a>Задачи Gulp</h2><p>“clean”: Удаляет директорию dist для чистой сборки.<br>“minifyHtml”: Минифицирует HTML файлы.<br>“html”: Копирует HTML файлы в директорию dist.<br>“js”: Компилирует и минифицирует JavaScript файлы с помощью Rollup.<br>“concatJs”: Объединяет JavaScript файлы, включая внешние библиотеки.<br>“styles”: Компилирует SASS&#x2F;SCSS в CSS, минифицирует и объединяет стили.<br>“images”: Оптимизирует JPEG и PNG изображения.<br>“svg”: Минифицирует SVG файлы.<br>“build”: Основная задача сборки, выполняющая все вышеперечисленные задачи.<br>“default”: Задача по умолчанию, которая отслеживает изменения файлов и запускает соответствующие задачи.</p>
-<h2 id="Зависимости"><a href="#Зависимости" class="headerlink" title="Зависимости"></a>Зависимости</h2><p>“gulp”: Система сборки для автоматизации задач разработки<br>“imagemin”: Оптимизация изображений<br>“gulp-clean-css”: Минификация CSS файлов<br>“browser-sync”: Синхронизация браузера и автоматическое обновление<br>“gulp-concat”: Объединение файлов<br>“gulp-uglify”: Минификация JavaScript<br>“rollup”: Сборщик модулей JavaScript<br>“sass”: Препроцессор CSS<br>“gulp-sass”: Интеграция Sass с Gulp<br>“gulp-sourcemaps”: Создание source maps<br>“del”: Удаление файлов и директорий<br>“gulp-if”: Условное выполнение задач в Gulp<br>“gulp-svgmin”: Минификация SVG файлов<br>“gulp-rename”: Переименование файлов<br>“minimist”: Парсинг аргументов командной строки<br>“gulp-htmlmin”: Минификация HTML файлов</p>
-<h2 id="Возможные-ошибки-при-установке-зависимостей"><a href="#Возможные-ошибки-при-установке-зависимостей" class="headerlink" title="Возможные ошибки при установке зависимостей"></a>Возможные ошибки при установке зависимостей</h2><ol>
-<li>Ошибка при установке pngquant.<br>Возможное решение - устанавливаем раннюю версию модуля imagemin-pngquant и pngquant-bin:<br>“npm install <a href="mailto:&#105;&#109;&#x61;&#x67;&#101;&#x6d;&#105;&#x6e;&#x2d;&#112;&#110;&#x67;&#113;&#x75;&#97;&#x6e;&#x74;&#x40;&#53;&#46;&#x30;&#x2e;&#x31;">imagemin-pngquant@5.0.1</a> –save-dev –legacy-peer-deps”<br>“npm install <a href="mailto:&#x70;&#x6e;&#x67;&#x71;&#x75;&#97;&#x6e;&#116;&#45;&#x62;&#x69;&#110;&#x40;&#x33;&#46;&#x31;&#x2e;&#49;">pngquant-bin@3.1.1</a> –save-dev –legacy-peer-deps”</li>
+<h2 id="Задачи-Gulp"><a href="#Задачи-Gulp" class="headerlink" title="Задачи Gulp"></a>Задачи Gulp</h2><ol>
+<li>“clean”: Удаляет директорию dist для чистой сборки.</li>
+<li>“minifyHtml”: Минифицирует HTML файлы.</li>
+<li>“html”: Копирует HTML файлы в директорию dist.</li>
+<li>“js”: Компилирует и минифицирует JavaScript файлы с помощью Rollup.</li>
+<li>“concatJs”: Объединяет JavaScript файлы, включая внешние библиотеки.</li>
+<li>“styles”: Компилирует SASS&#x2F;SCSS в CSS, минифицирует и объединяет стили.</li>
+<li>“images”: Оптимизирует JPEG и PNG изображения.</li>
+<li>“svg”: Минифицирует SVG файлы.</li>
+<li>“build”: Основная задача сборки, выполняющая все вышеперечисленные задачи.</li>
+<li>“default”: Задача по умолчанию, которая отслеживает изменения файлов и запускает соответствующие задачи.</li>
 </ol>
-<h2 id="Преимущества-в-использовании-сборки-Gulp"><a href="#Преимущества-в-использовании-сборки-Gulp" class="headerlink" title="Преимущества в использовании сборки Gulp"></a>Преимущества в использовании сборки Gulp</h2><p>Автоматизация процессов разработки.<br>Поддержка модульной архитектуры JavaScript.<br>Оптимизация производительности благодаря минификации и сжатию ресурсов.<br>Удобный рабочий процесс с автоматическим обновлением браузера.<br>Легкого расширяется функционал сборки.</p>
+<h2 id="Зависимости"><a href="#Зависимости" class="headerlink" title="Зависимости"></a>Зависимости</h2><ul>
+<li>“gulp”: Система сборки для автоматизации задач разработки</li>
+<li>“imagemin”: Оптимизация изображений</li>
+<li>“gulp-clean-css”: Минификация CSS файлов</li>
+<li>“browser-sync”: Синхронизация браузера и автоматическое обновление</li>
+<li>“gulp-concat”: Объединение файлов</li>
+<li>“gulp-uglify”: Минификация JavaScript</li>
+<li>“rollup”: Сборщик модулей JavaScript</li>
+<li>“sass”: Препроцессор CSS</li>
+<li>“gulp-sass”: Интеграция Sass с Gulp</li>
+<li>“gulp-sourcemaps”: Создание source maps</li>
+<li>“del”: Удаление файлов и директорий</li>
+<li>“gulp-if”: Условное выполнение задач в Gulp</li>
+<li>“gulp-svgmin”: Минификация SVG файлов</li>
+<li>“gulp-rename”: Переименование файлов</li>
+<li>“minimist”: Парсинг аргументов командной строки</li>
+<li>“gulp-htmlmin”: Минификация HTML файлов</li>
+</ul>
+<h2 id="Возможные-ошибки-при-установке-зависимостей"><a href="#Возможные-ошибки-при-установке-зависимостей" class="headerlink" title="Возможные ошибки при установке зависимостей"></a>Возможные ошибки при установке зависимостей</h2><ol>
+<li>Ошибка при установке pngquant.<br>Возможное решение - устанавливаем раннюю версию модуля imagemin-pngquant и pngquant-bin:<br>“npm install <a href="mailto:&#x69;&#109;&#97;&#103;&#x65;&#109;&#x69;&#x6e;&#x2d;&#112;&#x6e;&#x67;&#x71;&#x75;&#97;&#x6e;&#x74;&#x40;&#53;&#46;&#x30;&#x2e;&#49;">imagemin-pngquant@5.0.1</a> –save-dev –legacy-peer-deps”<br>“npm install <a href="mailto:&#112;&#110;&#x67;&#x71;&#117;&#x61;&#x6e;&#116;&#x2d;&#98;&#105;&#110;&#64;&#x33;&#46;&#49;&#46;&#49;">pngquant-bin@3.1.1</a> –save-dev –legacy-peer-deps”</li>
+</ol>
+<h2 id="Преимущества-в-использовании-сборки-Gulp"><a href="#Преимущества-в-использовании-сборки-Gulp" class="headerlink" title="Преимущества в использовании сборки Gulp"></a>Преимущества в использовании сборки Gulp</h2><ul>
+<li>Автоматизация процессов разработки.</li>
+<li>Поддержка модульной архитектуры JavaScript.</li>
+<li>Оптимизация производительности благодаря минификации и сжатию ресурсов.</li>
+<li>Удобный рабочий процесс с автоматическим обновлением браузера.</li>
+<li>Легкого расширяется функционал сборки.</li>
+</ul>
 
       </div>
     </div>
