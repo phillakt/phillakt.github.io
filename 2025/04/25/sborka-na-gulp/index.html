@@ -106,26 +106,50 @@
           </div>
         </div>
         <div class="article-detail__content">
-          <h2 id="Описание-проекта"><a href="#Описание-проекта" class="headerlink" title="Описание проекта"></a>Описание проекта</h2><p>Сборка веб-приложений, основанная на Gulp.<br>Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML</p>
-<h2 id="Установка"><a href="#Установка" class="headerlink" title="Установка"></a>Установка</h2><p>Клонируйте репозиторий:<br><code>git clone https://github.com/phillakt/gulp-build.git</code></p>
-<p>Перейдите в директорию проекта:<br><code>cd my-project</code> («my-project» название-проекта)</p>
-<p>Рекомендуемые версии node и npm:<br><code>node -v</code>: 16.20.2<br><code>npm -v</code>: 8.19.4</p>
-<p>Установите зависимости:<br><code>npm install</code><br>Если не устанавливаются зависимости то указываем флаги:<br><code>npm i --force</code> или <code>npm i --legacy-peer-deps</code></p>
-<h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>Для обычной сборки default: <code>gulp</code><br>Для production сборки: <code>gulp build</code></p>
-<h2 id="Структура-проекта"><a href="#Структура-проекта" class="headerlink" title="Структура проекта"></a>Структура проекта</h2><p>Основная структура проекта:<br>project&#x2F;<br>├── src&#x2F;<br>│ ├── js&#x2F;<br>│ ├── scss&#x2F;<br>│ └── index.html<br>├── dist&#x2F;<br>├── gulpfile.js<br>├── package-lock.json<br>└── package.json</p>
-<h2 id="Задачи-Gulp"><a href="#Задачи-Gulp" class="headerlink" title="Задачи Gulp"></a>Задачи Gulp</h2><ol>
+          <h2 id="Описание-проекта">Описание проекта</h2>
+<p>Сборка веб-приложений, основанная на Gulp.
+Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS/SCSS, оптимизацию изображений и минификацию HTML</p>
+<h2 id="Установка">Установка</h2>
+<p>Клонируйте репозиторий:
+<code>git clone https://github.com/phillakt/gulp-build.git</code></p>
+<p>Перейдите в директорию проекта:
+<code>cd my-project</code> («my-project» название-проекта)</p>
+<p>Рекомендуемые версии node и npm:
+<code>node -v</code>: 16.20.2
+<code>npm -v</code>: 8.19.4</p>
+<p>Установите зависимости:
+<code>npm install</code>
+Если не устанавливаются зависимости то указываем флаги:
+<code>npm i --force</code> или <code>npm i --legacy-peer-deps</code></p>
+<h2 id="Использование">Использование</h2>
+<p>Для обычной сборки default: <code>gulp</code>
+Для production сборки: <code>gulp build</code></p>
+<h2 id="Структура-проекта">Структура проекта</h2>
+<p>Основная структура проекта:
+project/
+├── src/
+│ ├── js/
+│ ├── scss/
+│ └── index.html
+├── dist/
+├── gulpfile.js
+├── package-lock.json
+└── package.json</p>
+<h2 id="Задачи-Gulp">Задачи Gulp</h2>
+<ol>
 <li><code>clean</code>: Удаляет директорию dist для чистой сборки.</li>
 <li><code>minifyHtml</code>: Минифицирует HTML файлы.</li>
 <li><code>html</code>: Копирует HTML файлы в директорию dist.</li>
 <li><code>js</code>: Компилирует и минифицирует JavaScript файлы с помощью Rollup.</li>
 <li><code>concatJs</code>: Объединяет JavaScript файлы, включая внешние библиотеки.</li>
-<li><code>styles</code>: Компилирует SASS&#x2F;SCSS в CSS, минифицирует и объединяет стили.</li>
+<li><code>styles</code>: Компилирует SASS/SCSS в CSS, минифицирует и объединяет стили.</li>
 <li><code>images</code>: Оптимизирует JPEG и PNG изображения.</li>
 <li><code>svg</code>: Минифицирует SVG файлы.</li>
 <li><code>build</code>: Основная задача сборки, выполняющая все вышеперечисленные задачи.</li>
 <li><code>default</code>: Задача по умолчанию, которая отслеживает изменения файлов и запускает соответствующие задачи.</li>
 </ol>
-<h2 id="Зависимости"><a href="#Зависимости" class="headerlink" title="Зависимости"></a>Зависимости</h2><ul>
+<h2 id="Зависимости">Зависимости</h2>
+<ul>
 <li><code>gulp</code>: Система сборки для автоматизации задач разработки</li>
 <li><code>imagemin</code>: Оптимизация изображений</li>
 <li><code>gulp-clean-css</code>: Минификация CSS файлов</li>
@@ -143,10 +167,15 @@
 <li><code>minimist</code>: Парсинг аргументов командной строки</li>
 <li><code>gulp-htmlmin</code>: Минификация HTML файлов</li>
 </ul>
-<h2 id="Возможные-ошибки-при-установке-зависимостей"><a href="#Возможные-ошибки-при-установке-зависимостей" class="headerlink" title="Возможные ошибки при установке зависимостей"></a>Возможные ошибки при установке зависимостей</h2><ol>
-<li>Ошибка при установке pngquant.<br>Возможное решение - устанавливаем раннюю версию модуля imagemin-pngquant и pngquant-bin:<br><code>npm install imagemin-pngquant@5.0.1 --save-dev --legacy-peer-deps</code><br><code>npm install pngquant-bin@3.1.1 --save-dev --legacy-peer-deps</code></li>
+<h2 id="Возможные-ошибки-при-установке-зависимостей">Возможные ошибки при установке зависимостей</h2>
+<ol>
+<li>Ошибка при установке pngquant.
+Возможное решение - устанавливаем раннюю версию модуля imagemin-pngquant и pngquant-bin:
+<code>npm install imagemin-pngquant@5.0.1 --save-dev --legacy-peer-deps</code>
+<code>npm install pngquant-bin@3.1.1 --save-dev --legacy-peer-deps</code></li>
 </ol>
-<h2 id="Преимущества-в-использовании-сборки-Gulp"><a href="#Преимущества-в-использовании-сборки-Gulp" class="headerlink" title="Преимущества в использовании сборки Gulp"></a>Преимущества в использовании сборки Gulp</h2><ul>
+<h2 id="Преимущества-в-использовании-сборки-Gulp">Преимущества в использовании сборки Gulp</h2>
+<ul>
 <li>Автоматизация процессов разработки.</li>
 <li>Поддержка модульной архитектуры JavaScript.</li>
 <li>Оптимизация производительности благодаря минификации и сжатию ресурсов.</li>
