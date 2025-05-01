@@ -9,7 +9,7 @@
     Настройка собственного домена для GitHub Pages | 
     Philla
   </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Настройка собственного домена для GitHub Pages включает несколько шагов. Следуйте приведенной инструкции в статье">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Настройка собственного домена для GitHub Pages">
@@ -18,7 +18,7 @@
 <meta property="og:description" content="Настройка собственного домена для GitHub Pages включает несколько шагов. Следуйте приведенной инструкции в статье">
 <meta property="og:locale" content="ru_RU">
 <meta property="article:published_time" content="2025-05-01T12:24:47.000Z">
-<meta property="article:modified_time" content="2025-05-01T19:57:23.136Z">
+<meta property="article:modified_time" content="2025-05-01T23:46:05.965Z">
 <meta property="article:author" content="Philla">
 <meta property="article:tag" content="gh-pages">
 <meta name="twitter:card" content="summary">
@@ -28,22 +28,61 @@
   
 
   
-<link rel="stylesheet" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css">
-
   
 <link rel="stylesheet" href="/css/main.min.css">
 
-
-  
-<link rel="stylesheet" href="/css/main.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css"> -->
   
 <script src="/js/highlight.min.js"></script>
 
 
-  
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script> -->
-  <!-- <script>hljs.highlightAll();</script> -->
+
+  <script>hljs.highlightAll();</script>
+
+
+  <style>
+    
+    .article-detail__content {
+      overflow: hidden;
+    }
+
+    figure {
+      background: #282c34;
+      overflow: auto; 
+      margin: 20px 0; 
+    }
+
+    @media (max-width: 767px) {
+          figure {
+            width: calc(100vw - 15vw);
+        }
+    }
+    @media (max-width: 576px) {
+          figure {
+            width: calc(100vw - 60px);
+        }
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse; 
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    .gutter {
+      display: none;
+    }
+
+    pre {
+        margin: 0;
+
+    }
+
+  </style>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
@@ -110,37 +149,10 @@
 <li><strong>Создайте репозиторий на GitHub</strong>: Убедитесь, что у вас есть репозиторий, в котором находится ваш сайт. Если у вас его нет, создайте новый репозиторий.</li>
 </ol>
 <p>Например: “nickname.github.io”</p>
-<pre><code class="language-javascript">function greet(name) &#123;
-    console.log(&quot;Hello, &quot; + name);
-&#125;
-greet(&quot;World&quot;);
-</code></pre>
-<pre><code class="language-javascript">function greet(name) &#123;
-    console.log(&quot;Hello, &quot; + name);
-&#125;
-greet(&quot;World&quot;);
-</code></pre>
-<pre><code class="language-javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function () &#123;
-    const btnsBack = document.querySelectorAll(&#39;.btn.btn__back--l-arrow&#39;);
-    btnsBack.forEach((el) =&gt; &#123;
-        el.addEventListener(&#39;click&#39;, () =&gt; &#123;
-            const referrer = document.referrer;
-            if (referrer) &#123;
-                window.location.href = referrer;
-            &#125; else &#123;
-                window.history.back();
-            &#125;
-        &#125;);
-    &#125;);
-&#125;);
-</code></pre>
-<pre><code class="language-php">echo &quot;Привет, мир!\n&quot;;
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;DOMContentLoaded&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> btnsBack = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;.btn.btn__back--l-arrow&#x27;</span>);<br>    btnsBack.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">el</span>) =&gt;</span> &#123;<br>        el.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>            <span class="hljs-keyword">const</span> referrer = <span class="hljs-variable language_">document</span>.<span class="hljs-property">referrer</span>;<br>            <span class="hljs-keyword">if</span> (referrer) &#123;<br>                <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = referrer;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-variable language_">window</span>.<span class="hljs-property">history</span>.<span class="hljs-title function_">back</span>();<br>            &#125;<br>        &#125;);<br>    &#125;);<br>&#125;);<br></code></pre></td></tr></table></figure>
 
-// …ещё код
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">sudo</span> poweroff<br></code></pre></td></tr></table></figure>
 
-echo &quot;Последняя инструкция\n&quot;;
-// Скрипт заканчивается в этом месте без PHP-тега, которым закрывается блок кода
-</code></pre>
 <ol start="2">
 <li><strong>Настройте GitHub Pages</strong>: <ul>
 <li>Перейдите в настройки вашего репозитория.</li>

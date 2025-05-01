@@ -9,7 +9,7 @@
     Архив: 2025 | 
     Philla
   </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Philla">
@@ -25,22 +25,61 @@
   
 
   
-<link rel="stylesheet" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css">
-
   
 <link rel="stylesheet" href="/css/main.min.css">
 
-
-  
-<link rel="stylesheet" href="/css/main.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github.min.css"> -->
   
 <script src="/js/highlight.min.js"></script>
 
 
-  
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script> -->
-  <!-- <script>hljs.highlightAll();</script> -->
+
+  <script>hljs.highlightAll();</script>
+
+
+  <style>
+    
+    .article-detail__content {
+      overflow: hidden;
+    }
+
+    figure {
+      background: #282c34;
+      overflow: auto; 
+      margin: 20px 0; 
+    }
+
+    @media (max-width: 767px) {
+          figure {
+            width: calc(100vw - 15vw);
+        }
+    }
+    @media (max-width: 576px) {
+          figure {
+            width: calc(100vw - 60px);
+        }
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse; 
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    .gutter {
+      display: none;
+    }
+
+    pre {
+        margin: 0;
+
+    }
+
+  </style>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
