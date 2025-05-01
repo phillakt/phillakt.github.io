@@ -34,88 +34,6 @@
 <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css"> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/dracula.css"> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-
-  <style>
-.hljs {
-  color: #abb2bf;
-  background: #272727;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta .hljs-string {
-  color: #98c379;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-
-.hljs-built_in,
-.hljs-title.class_,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-link {
-  text-decoration: underline;
-}
-  </style>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
@@ -178,11 +96,10 @@
           </div>
         </div>
         <div class="article-detail__content">
-          <h2 id="Шаг-1-Подготовка-репозитория">Шаг 1: Подготовка репозитория</h2>
-<ol>
+          <h2 id="Шаг-1-Подготовка-репозитория"><a href="#Шаг-1-Подготовка-репозитория" class="headerlink" title="Шаг 1: Подготовка репозитория"></a>Шаг 1: Подготовка репозитория</h2><ol>
 <li><strong>Создайте репозиторий на GitHub</strong>: Убедитесь, что у вас есть репозиторий, в котором находится ваш сайт. Если у вас его нет, создайте новый репозиторий.</li>
 </ol>
-<p>Например: “<a target="_blank" rel="noopener" href="http://nickname.github.io">nickname.github.io</a>”</p>
+<p>Например: “nickname.github.io”</p>
 <pre><code class="language-javascript">function greet(name) &#123;
     console.log(&quot;Hello, &quot; + name);
 &#125;
@@ -194,9 +111,9 @@ greet(&quot;World&quot;);
 greet(&quot;World&quot;);
 </code></pre>
 <pre><code class="language-javascript">document.addEventListener(&quot;DOMContentLoaded&quot;, function () &#123;
-    const btnsBack = document.querySelectorAll('.btn.btn__back--l-arrow');
+    const btnsBack = document.querySelectorAll(&#39;.btn.btn__back--l-arrow&#39;);
     btnsBack.forEach((el) =&gt; &#123;
-        el.addEventListener('click', () =&gt; &#123;
+        el.addEventListener(&#39;click&#39;, () =&gt; &#123;
             const referrer = document.referrer;
             if (referrer) &#123;
                 window.location.href = referrer;
@@ -215,27 +132,21 @@ echo &quot;Последняя инструкция\n&quot;;
 // Скрипт заканчивается в этом месте без PHP-тега, которым закрывается блок кода
 </code></pre>
 <ol start="2">
-<li><strong>Настройте GitHub Pages</strong>:
-<ul>
+<li><strong>Настройте GitHub Pages</strong>: <ul>
 <li>Перейдите в настройки вашего репозитория.</li>
 <li>Прокрутите вниз до раздела “Pages”.</li>
 <li>Выберите ветку, из которой будет развернут ваш сайт (обычно это “main” или “gh-pages”).</li>
-<li>В поле “Custom domain” укажите ваш домен: “<a target="_blank" rel="noopener" href="http://example.com">example.com</a>”.</li>
+<li>В поле “Custom domain” укажите ваш домен: “example.com”.</li>
 </ul>
 </li>
 </ol>
-<h2 id="Шаг-2-Настройка-DNS-на-стороне-регистратора-домена">Шаг 2: Настройка DNS на стороне регистратора домена</h2>
-<ol>
-<li>
-<p><strong>Купите домен</strong>: Если у вас его еще нет, купите домен у регистратора (например, <a target="_blank" rel="noopener" href="http://Reg.ru">Reg.ru</a> и т.д.).</p>
+<h2 id="Шаг-2-Настройка-DNS-на-стороне-регистратора-домена"><a href="#Шаг-2-Настройка-DNS-на-стороне-регистратора-домена" class="headerlink" title="Шаг 2: Настройка DNS на стороне регистратора домена"></a>Шаг 2: Настройка DNS на стороне регистратора домена</h2><ol>
+<li><p><strong>Купите домен</strong>: Если у вас его еще нет, купите домен у регистратора (например, Reg.ru и т.д.).</p>
 </li>
-<li>
-<p><strong>Настройка DNS</strong>:</p>
+<li><p><strong>Настройка DNS</strong>:</p>
 <ul>
-<li>Для <strong>корневого домена</strong> (например, “<a target="_blank" rel="noopener" href="http://example.com">example.com</a>”):
-<ul>
-<li>Создайте запись типа A, указывающую на IP-адреса GitHub Pages:
-<ul>
+<li>Для <strong>корневого домена</strong> (например, “example.com”):<ul>
+<li>Создайте запись типа A, указывающую на IP-адреса GitHub Pages:<ul>
 <li>“185.199.108.153”</li>
 <li>“185.199.109.153”</li>
 <li>“185.199.110.153”</li>
@@ -244,38 +155,30 @@ echo &quot;Последняя инструкция\n&quot;;
 </li>
 </ul>
 </li>
-<li>Для <strong>поддомена</strong> (например, “<a target="_blank" rel="noopener" href="http://www.example.com">www.example.com</a>”):
-<ul>
-<li>Создайте запись типа CNAME, указывающую на ваш домен (например, “<a target="_blank" rel="noopener" href="http://example.com">example.com</a>”).</li>
+<li>Для <strong>поддомена</strong> (например, “<a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a>“):<ul>
+<li>Создайте запись типа CNAME, указывающую на ваш домен (например, “example.com”).</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="Шаг-3-Настройка-репозитория">Шаг 3: Настройка репозитория</h2>
-<ol>
-<li>
-<p><strong>Создайте файл CNAME</strong>:</p>
+<h2 id="Шаг-3-Настройка-репозитория"><a href="#Шаг-3-Настройка-репозитория" class="headerlink" title="Шаг 3: Настройка репозитория"></a>Шаг 3: Настройка репозитория</h2><ol>
+<li><p><strong>Создайте файл CNAME</strong>: </p>
 <ul>
 <li>В корне вашего репозитория создайте файл с именем “CNAME” (без расширения).</li>
-<li>Добавьте в него ваш домен (например, “<a target="_blank" rel="noopener" href="http://www.example.com">www.example.com</a>” или “<a target="_blank" rel="noopener" href="http://example.com">example.com</a>”).</li>
+<li>Добавьте в него ваш домен (например, “<a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a>“ или “example.com”).</li>
 </ul>
 </li>
-<li>
-<p><strong>Закоммитьте изменения</strong>: Добавьте и закоммитьте файл CNAME в ваш репозиторий.</p>
+<li><p><strong>Закоммитьте изменения</strong>: Добавьте и закоммитьте файл CNAME в ваш репозиторий.</p>
 </li>
 </ol>
-<h2 id="Шаг-4-Проверка">Шаг 4: Проверка</h2>
-<ol>
-<li>
-<p><strong>Подождите</strong>: Изменения DNS могут занять некоторое время для распространения (обычно от нескольких минут до 48 часов).</p>
+<h2 id="Шаг-4-Проверка"><a href="#Шаг-4-Проверка" class="headerlink" title="Шаг 4: Проверка"></a>Шаг 4: Проверка</h2><ol>
+<li><p><strong>Подождите</strong>: Изменения DNS могут занять некоторое время для распространения (обычно от нескольких минут до 48 часов).</p>
 </li>
-<li>
-<p><strong>Проверьте</strong>: После того как DNS обновится, перейдите на ваш домен, и он должен перенаправлять на ваш сайт на GitHub Pages.</p>
+<li><p><strong>Проверьте</strong>: После того как DNS обновится, перейдите на ваш домен, и он должен перенаправлять на ваш сайт на GitHub Pages.</p>
 </li>
 </ol>
-<h2 id="Дополнительные-советы">Дополнительные советы</h2>
-<ul>
+<h2 id="Дополнительные-советы"><a href="#Дополнительные-советы" class="headerlink" title="Дополнительные советы"></a>Дополнительные советы</h2><ul>
 <li>Убедитесь, что ваш сайт работает по HTTPS. GitHub Pages поддерживает HTTPS для пользовательских доменов. В настройках GitHub Pages можно включить эту опцию нажав на чекбокс “Enforce HTTPS”.</li>
 <li>Если у вас возникли проблемы, проверьте, правильно ли настроены записи DNS и файл CNAME.</li>
 </ul>
@@ -335,7 +238,7 @@ echo &quot;Последняя инструкция\n&quot;;
 </section>
     </main>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
     <script src="/js/main.min.js"></script>
 </body>
 
