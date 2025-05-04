@@ -18,7 +18,7 @@
 <meta property="og:description" content="Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML">
 <meta property="og:locale" content="ru_RU">
 <meta property="article:published_time" content="2025-04-25T20:34:33.000Z">
-<meta property="article:modified_time" content="2025-05-02T15:29:48.345Z">
+<meta property="article:modified_time" content="2025-05-04T22:23:41.452Z">
 <meta property="article:author" content="Philla">
 <meta property="article:tag" content="gulp">
 <meta property="article:tag" content="front-end">
@@ -97,37 +97,46 @@
           </div>
         </div>
         <div class="article-detail__content">
-          <h2 id="Описание-проекта"><a href="#Описание-проекта" class="headerlink" title="Описание проекта"></a>Описание проекта</h2><p>Сборка веб-приложений, основанная на Gulp.<br>Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS&#x2F;SCSS, оптимизацию изображений и минификацию HTML</p>
-<h2 id="Установка"><a href="#Установка" class="headerlink" title="Установка"></a>Установка</h2><p>Клонируйте репозиторий:<br>git clone <a target="_blank" rel="noopener" href="https://github.com/phillakt/gulp-build.git">https://github.com/phillakt/gulp-build.git</a></p>
-<p>Перейдите в директорию проекта:<br>cd my-project («my-project» название-проекта)</p>
-<p>Рекомендуемые версии node и npm:<br><code>node -v: 16.20.2</code><br><code>npm -v: 8.19.4</code></p>
-<p>Установите зависимости:<br>npm install<br>Если не устанавливаются зависимости то указываем флаги: </p>
+          <h2 id="Описание-проекта">Описание проекта</h2>
+<p>Сборка веб-приложений, основанная на Gulp.
+Она обеспечивает полный цикл разработки, включая компиляцию JavaScript, обработку стилей SASS/SCSS, оптимизацию изображений и минификацию HTML</p>
+<h2 id="Установка">Установка</h2>
+<p>Клонируйте репозиторий:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git clone https://github.com/phillakt/gulp-build.git<br></code></pre></td></tr></table></figure>
+<p>Перейдите в директорию своего проекта:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">cd my-project<br></code></pre></td></tr></table></figure>
+<p>Рекомендуемые версии node (16.20.2) и npm (8.19.4):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">node -v<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm -v<br></code></pre></td></tr></table></figure>
+<p>Установите зависимости:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm install<br></code></pre></td></tr></table></figure>
+<p>Если не устанавливаются зависимости то указываем флаги:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm i --force<br></code></pre></td></tr></table></figure>
-<p>или </p>
+<p>или</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm i --legacy-peer-deps<br></code></pre></td></tr></table></figure>
-
-<h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>Для обычной сборки default:</p>
+<h2 id="Использование">Использование</h2>
+<p>Для обычной сборки default:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">gulp<br></code></pre></td></tr></table></figure>
-<p>Для production сборки: </p>
+<p>Для production сборки:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">gulp build<br></code></pre></td></tr></table></figure>
-
-<h2 id="Структура-проекта"><a href="#Структура-проекта" class="headerlink" title="Структура проекта"></a>Структура проекта</h2><p>Основная структура проекта:</p>
+<h2 id="Структура-проекта">Структура проекта</h2>
+<p>Основная структура проекта:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">project/<br>├── src/<br>│   ├── js/<br>│   ├── scss/<br>│   └── index.html<br>├── dist/<br>├── gulpfile.js<br>├── package-lock.json<br>└── package.json<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="Задачи-Gulp"><a href="#Задачи-Gulp" class="headerlink" title="Задачи Gulp"></a>Задачи Gulp</h2><ol>
+<h2 id="Задачи-Gulp">Задачи Gulp</h2>
+<ol>
 <li>clean: Удаляет директорию dist для чистой сборки.</li>
 <li>minifyHtml: Минифицирует HTML файлы.</li>
 <li>html: Копирует HTML файлы в директорию dist.</li>
 <li>js: Компилирует и минифицирует JavaScript файлы с помощью Rollup.</li>
 <li>concatJs: Объединяет JavaScript файлы, включая внешние библиотеки.</li>
-<li>styles: Компилирует SASS&#x2F;SCSS в CSS, минифицирует и объединяет стили.</li>
+<li>styles: Компилирует SASS/SCSS в CSS, минифицирует и объединяет стили.</li>
 <li>images: Оптимизирует JPEG и PNG изображения.</li>
 <li>svg: Минифицирует SVG файлы.</li>
 <li>build: Основная задача сборки, выполняющая все вышеперечисленные задачи.</li>
 <li>default: Задача по умолчанию, которая отслеживает изменения файлов и запускает соответствующие задачи.</li>
 </ol>
-<h2 id="Зависимости"><a href="#Зависимости" class="headerlink" title="Зависимости"></a>Зависимости</h2><ul>
+<h2 id="Зависимости">Зависимости</h2>
+<ul>
 <li>gulp: Система сборки для автоматизации задач разработки</li>
 <li>imagemin: Оптимизация изображений</li>
 <li>gulp-clean-css: Минификация CSS файлов</li>
@@ -145,13 +154,15 @@
 <li>minimist: Парсинг аргументов командной строки</li>
 <li>gulp-htmlmin: Минификация HTML файлов</li>
 </ul>
-<h2 id="Возможные-ошибки-при-установке-зависимостей"><a href="#Возможные-ошибки-при-установке-зависимостей" class="headerlink" title="Возможные ошибки при установке зависимостей"></a>Возможные ошибки при установке зависимостей</h2><ol>
-<li>Ошибка при установке pngquant.<br>Возможное решение - устанавливаем раннюю версию модуля imagemin-pngquant и pngquant-bin:</li>
+<h2 id="Возможные-ошибки-при-установке-зависимостей">Возможные ошибки при установке зависимостей</h2>
+<ol>
+<li>Ошибка при установке pngquant.
+Возможное решение - устанавливаем раннюю версию модуля imagemin-pngquant и pngquant-bin:</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm install imagemin-pngquant@5.0.1 --save-dev --legacy-peer-deps<br></code></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">npm install pngquant-bin@3.1.1 --save-dev --legacy-peer-deps<br></code></pre></td></tr></table></figure>
-
-<h2 id="Преимущества-в-использовании-сборки-Gulp"><a href="#Преимущества-в-использовании-сборки-Gulp" class="headerlink" title="Преимущества в использовании сборки Gulp"></a>Преимущества в использовании сборки Gulp</h2><ul>
+<h2 id="Преимущества-в-использовании-сборки-Gulp">Преимущества в использовании сборки Gulp</h2>
+<ul>
 <li>Автоматизация процессов разработки.</li>
 <li>Поддержка модульной архитектуры JavaScript.</li>
 <li>Оптимизация производительности благодаря минификации и сжатию ресурсов.</li>
