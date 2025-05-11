@@ -35,7 +35,7 @@
 <meta property="og:description" content="В Linux часто возникает задача массового изменения прав доступа к файлам и папкам. Для этого удобно использовать команду &#96;find&#96; вместе с опцией &#96;-exec&#96;.">
 <meta property="og:locale" content="ru_RU">
 <meta property="article:published_time" content="2025-05-11T20:34:56.000Z">
-<meta property="article:modified_time" content="2025-05-11T20:43:47.319Z">
+<meta property="article:modified_time" content="2025-05-11T21:32:08.358Z">
 <meta property="article:author" content="Philla">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="find">
@@ -136,18 +136,19 @@
 
 <p>Что происходит:</p>
 <ol>
-<li><p><code>find</code> находит первую директорию, например <code>dir1</code>.</p>
-</li>
-<li><p>В команде <code>-exec</code> подставляет <code>&#123;&#125;</code> на место <code>dir1</code> и выполняет:</p>
+<li><code>find</code> находит первую директорию, например <code>dir1</code>.</li>
+<li>В команде <code>-exec</code> подставляет <code>&#123;&#125;</code> на место <code>dir1</code> и выполняет:</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 755 dir1<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>Затем <code>find</code> находит следующую директорию, например <code>dir2</code>.</p>
-</li>
-<li><p>Опять подставляет <code>&#123;&#125;</code> на место <code>dir2</code> и выполняет:</p>
+
+<ol start="3">
+<li>Затем <code>find</code> находит следующую директорию, например <code>dir2</code>.</li>
+<li>Опять подставляет <code>&#123;&#125;</code> на место <code>dir2</code> и выполняет:</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 755 dir2<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>И так далее для всех найденных директорий (<code>dir3</code>, <code>dir4</code> и т.д.).</p>
-</li>
+
+<ol start="5">
+<li>И так далее для всех найденных директорий (<code>dir3</code>, <code>dir4</code> и т.д.).</li>
 </ol>
 <p>Таким образом, команда <code>chmod 755</code> выполняется отдельно для каждого найденного элемента.</p>
 <hr>
@@ -190,18 +191,18 @@
 <p>В этом случае <code>find</code> передаёт несколько найденных файлов за один вызов команды, что может быть эффективнее. Но в некоторых случаях нужно именно выполнять команду отдельно для каждого элемента — тогда используется <code>\;</code>.</p>
 <hr>
 <h2 id="Итог"><a href="#Итог" class="headerlink" title="Итог"></a>Итог</h2><ul>
-<li><p>Команда <code>find</code> с <code>-exec</code> позволяет выполнять операции над каждым найденным файлом или директорией.</p>
-</li>
-<li><p><code>&#123;&#125;</code> — это шаблон, который заменяется именем текущего найденного объекта.</p>
-</li>
-<li><p><code>\;</code> — обозначает конец команды.</p>
-</li>
-<li><p>Пример для директорий:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /путь/к/директории -<span class="hljs-built_in">type</span> d -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 755 &#123;&#125; \;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>Пример для файлов:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /путь/к/директории -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 644 &#123;&#125; \;<br></code></pre></td></tr></table></figure></li>
+<li>Команда <code>find</code> с <code>-exec</code> позволяет выполнять операции над каждым найденным файлом или директорией.</li>
+<li><code>&#123;&#125;</code> — это шаблон, который заменяется именем текущего найденного объекта.</li>
+<li><code>\;</code> — обозначает конец команды.</li>
+<li>Пример для директорий:</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /путь/к/директории -<span class="hljs-built_in">type</span> d -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 755 &#123;&#125; \;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Пример для файлов:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /путь/к/директории -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 644 &#123;&#125; \;<br></code></pre></td></tr></table></figure>
+
 <p>Используйте эту конструкцию для удобного и безопасного массового изменения прав доступа.</p>
 
         </div>
