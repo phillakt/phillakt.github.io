@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(101750771, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/101750771" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
+  <title>
+    
+    Настройка сети в Ubuntu Server с использованием Netplan | 
+    Philla
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Netplan — современный инструмент для настройки сети в Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Настройка сети в Ubuntu Server с использованием Netplan">
+<meta property="og:url" content="https://phillakt.github.io/2025/05/13/nastroyka-seti-netplan/">
+<meta property="og:site_name" content="Philla">
+<meta property="og:description" content="Netplan — современный инструмент для настройки сети в Ubuntu">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2025-05-13T18:11:47.000Z">
+<meta property="article:modified_time" content="2025-05-13T20:47:59.769Z">
+<meta property="article:author" content="Philla">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="netplan">
+<meta name="twitter:card" content="summary">
+  
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/augmented-ui.min.css">
+
+  
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <main class="main">
+      <section class="section-top">
+        
+    <header class="header" data-augmented-ui="bl-clip-x">
+      <div class="container">
+        <div class="header__grid">
+          <div class="header__logo">
+            <a href="/">
+              Philla
+            </a>
+          </div>
+          <div class="header__menu">
+            <ul>
+              
+                <li>
+                  <a href="/archives/">
+                    Архив
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/contacts/">
+                    Контакты
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+          
+<section class="article-detail mt60 mb60">
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+  <article class="mb60">
+    <div class="container-md">
+      <div class="article-detail__wrap" data-augmented-ui="tr-clip-x br-2-clip-y br-2-clip-y">
+          <div class="mb30">
+            <img src="/images/tags/linux/linux.svg" alt="Настройка сети в Ubuntu Server с использованием Netplan">
+          </div>
+        <h1 class="article-detail__title">Настройка сети в Ubuntu Server с использованием Netplan</h1>
+        <div class="article-detail__meta">
+          <div class="article-detail__date">2025-05-13</div>
+          <div class="article-detail__tags">
+            
+  <ul class="article__meta--tag-list" itemprop="keywords"><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/netplan/" rel="tag">netplan</a></li></ul>
+
+          </div>
+        </div>
+        <div class="article-detail__content">
+          <p>Netplan — современный инструмент для настройки сети в Ubuntu (начиная с версии 17.10), который использует YAML-конфигурации.</p>
+<h2 id="Шаги-настройки"><a href="#Шаги-настройки" class="headerlink" title="Шаги настройки"></a>Шаги настройки</h2><h3 id="1-Просмотр-файлов-конфигурации-Netplan"><a href="#1-Просмотр-файлов-конфигурации-Netplan" class="headerlink" title="1. Просмотр файлов конфигурации Netplan"></a>1. Просмотр файлов конфигурации Netplan</h3><p>Конфигурационные файлы находятся в каталоге <code>/etc/netplan/</code>. Чтобы увидеть их список, выполните:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /etc/netplan/<br></code></pre></td></tr></table></figure>
+
+<p>Обычно это один или несколько файлов с расширением <code>.yaml</code>, например <code>01-netcfg.yaml</code> или <code>50-cloud-init.yaml</code>.</p>
+<h3 id="2-Редактирование-файла-конфигурации"><a href="#2-Редактирование-файла-конфигурации" class="headerlink" title="2. Редактирование файла конфигурации"></a>2. Редактирование файла конфигурации</h3><p>Откройте нужный файл с помощью текстового редактора, например <code>nano</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/netplan/01-netcfg.yaml<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-Пример-конфигурации"><a href="#3-Пример-конфигурации" class="headerlink" title="3. Пример конфигурации"></a>3. Пример конфигурации</h3><p>Статический IP</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">network:</span><br>  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span><br>  <span class="hljs-attr">renderer:</span> <span class="hljs-string">networkd</span><br>  <span class="hljs-attr">ethernets:</span><br>    <span class="hljs-attr">enp0s3:</span>  <span class="hljs-comment"># Замените на имя вашего сетевого интерфейса</span><br>      <span class="hljs-attr">dhcp4:</span> <span class="hljs-literal">no</span><br>      <span class="hljs-attr">addresses:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.0</span><span class="hljs-number">.10</span><span class="hljs-string">/24</span>  <span class="hljs-comment"># Статический IP и маска подсети</span><br>      <span class="hljs-attr">gateway4:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>  <span class="hljs-comment"># Шлюз по умолчанию</span><br>      <span class="hljs-attr">nameservers:</span><br>        <span class="hljs-attr">addresses:</span><br>          <span class="hljs-bullet">-</span> <span class="hljs-number">8.8</span><span class="hljs-number">.8</span><span class="hljs-number">.8</span><br>          <span class="hljs-bullet">-</span> <span class="hljs-number">8.8</span><span class="hljs-number">.4</span><span class="hljs-number">.4</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Важно:</strong> Добавление строки <code>renderer: networkd</code> явно указывает использовать systemd-networkd для управления сетью, что является стандартом для серверных систем Ubuntu. Если не указать, Netplan выберет рендерер по умолчанию.</p>
+</blockquote>
+<p>DHCP</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">network:</span><br>  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span><br>  <span class="hljs-attr">renderer:</span> <span class="hljs-string">networkd</span><br>  <span class="hljs-attr">ethernets:</span><br>    <span class="hljs-attr">ens33:</span>  <span class="hljs-comment"># Замените на имя вашего сетевого интерфейса</span><br>      <span class="hljs-attr">dhcp4:</span> <span class="hljs-literal">yes</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-Сохранение-изменений"><a href="#4-Сохранение-изменений" class="headerlink" title="4. Сохранение изменений"></a>4. Сохранение изменений</h3><p>В <code>nano</code>: нажмите <code>Ctrl + X</code>, затем <code>Y</code> и <code>Enter</code>.</p>
+<h3 id="5-Применение-настроек"><a href="#5-Применение-настроек" class="headerlink" title="5. Применение настроек"></a>5. Применение настроек</h3><p>Чтобы применить изменения, выполните:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> netplan apply<br></code></pre></td></tr></table></figure>
+
+<p>Если возникли ошибки, можно запустить с отладкой:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> netplan --debug apply<br></code></pre></td></tr></table></figure>
+
+<h3 id="6-Проверка-состояния-сети"><a href="#6-Проверка-состояния-сети" class="headerlink" title="6. Проверка состояния сети"></a>6. Проверка состояния сети</h3><p>Проверьте настройки с помощью:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip a<br></code></pre></td></tr></table></figure>
+
+<p>или, если установлен пакет <code>net-tools</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ifconfig<br></code></pre></td></tr></table></figure>
+
+<h2 id="Дополнительные-советы"><a href="#Дополнительные-советы" class="headerlink" title="Дополнительные советы"></a>Дополнительные советы</h2><ul>
+<li>Чтобы узнать имя сетевого интерфейса, используйте команду:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip <span class="hljs-built_in">link</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Если вы настраиваете сервер с графическим окружением, возможно, используется другой рендерер (<code>NetworkManager</code>). В таком случае можно указать в конфигурации <code>renderer: NetworkManager</code>.</p>
+</li>
+<li><p>YAML чувствителен к отступам — используйте пробелы, не табуляцию.</p>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+</section>
+
+      </section>
+
+      <section class="section-bottom">
+    <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo mb30">
+                        <a href="/">
+                            Philla
+                          </a>
+                    </div>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__menu">
+                        <ul>
+                            
+                                <li>
+                                  <a href="/archives/">
+                                    Архив
+                                  </a>
+                                </li>
+                            
+                                <li>
+                                  <a href="/contacts/">
+                                    Контакты
+                                  </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</section>
+    </main>
+
+    
+      
+<script src="/js/highlight.min.js"></script>
+
+    
+    <script src="/js/main.min.js"></script>
+  </body>
+
+</html>
