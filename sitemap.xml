@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://philla.ru/2025/05/13/ispolzovanie-utility-ncdu/</loc>
+    <lastmod>
+      
+        1747245043093
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/06/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-fetch/</loc>
+    <lastmod>
+      
+        1747169627581
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/04/25/sborka-na-gulp/</loc>
+    <lastmod>
+      
+        1747169313904
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/11/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-xmlhttprequest/</loc>
+    <lastmod>
+      
+        1747169311066
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/01/nastroyka-sobstvennogo-domena-dlya-gh-pages/</loc>
+    <lastmod>
+      
+        1747169304841
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/11/find-rekursivnaya-zamena-prav-na-direktorii-i-fayly/</loc>
+    <lastmod>
+      
+        1747169284034
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/13/nastroyka-seti-netplan/</loc>
+    <lastmod>
+      
+        1747169279769
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/contacts/index.html</loc>
+    <lastmod>
+      
+        1745359273525
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://philla.ru/</loc>
+    <lastmod></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+
+  
+</urlset>
