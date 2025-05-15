@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(101750771, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/101750771" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
+  <title>
+    
+    Добавление пользователя в группу sudo | 
+    Philla
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Группа sudo позволяет пользователям выполнять команды с повышенными привилегиями">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Добавление пользователя в группу sudo">
+<meta property="og:url" content="https://phillakt.github.io/2025/05/15/dobavlenie-polzovatelya-v-gruppu-sudo/">
+<meta property="og:site_name" content="Philla">
+<meta property="og:description" content="Группа sudo позволяет пользователям выполнять команды с повышенными привилегиями">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2025-05-15T14:18:54.000Z">
+<meta property="article:modified_time" content="2025-05-15T14:29:07.623Z">
+<meta property="article:author" content="Philla">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+  
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/augmented-ui.min.css">
+
+  
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <main class="main">
+      <section class="section-top">
+        
+    <header class="header" data-augmented-ui="bl-clip-x">
+      <div class="container">
+        <div class="header__grid">
+          <div class="header__logo">
+            <a href="/">
+              Philla
+            </a>
+          </div>
+          <div class="header__menu">
+            <ul>
+              
+                <li>
+                  <a href="/archives/">
+                    Архив
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/contacts/">
+                    Контакты
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+          <section class="article-detail mt60 mb60">
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+  <article class="mb60">
+    <div class="container-md">
+      <div class="article-detail__wrap" data-augmented-ui="tr-clip-x br-2-clip-y br-2-clip-y">
+
+          
+
+        <h1 class="article-detail__title">Добавление пользователя в группу sudo</h1>
+        <div class="article-detail__meta">
+          <div class="article-detail__date">2025-05-15</div>
+          <div class="article-detail__tags">
+            
+  <ul class="article__meta--tag-list" itemprop="keywords"><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+          </div>
+        </div>
+        <div class="article-detail__content">
+          <p>В операционных системах на базе Linux, таких как Ubuntu, Debian и других дистрибутивах, группа <code>sudo</code> позволяет пользователям выполнять команды с повышенными привилегиями, что полезно для администрирования системы. В этой статье мы рассмотрим, как добавить пользователя в группу <code>sudo</code>.</p>
+<h2 id="Шаги-для-добавления-пользователя-в-группу-sudo">Шаги для добавления пользователя в группу sudo</h2>
+<h3 id="1-Откройте-терминал">1. Откройте терминал</h3>
+<p>Первым шагом является открытие терминала. Вы можете сделать это, нажав <code>Ctrl + Alt + T</code> или найдя терминал в меню приложений.</p>
+<h3 id="2-Войдите-в-систему-как-суперпользователь">2. Войдите в систему как суперпользователь</h3>
+<p>Для выполнения команд, связанных с управлением пользователями, вам необходимо иметь права суперпользователя. Если вы уже вошли в систему как пользователь с правами <code>sudo</code>, вы можете пропустить этот шаг. В противном случае выполните следующую команду:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">su -<br></code></pre></td></tr></table></figure>
+<p>Введите пароль суперпользователя, чтобы получить доступ к командной строке.</p>
+<h3 id="3-Добавление-пользователя-в-группу-sudo">3. Добавление пользователя в группу sudo</h3>
+<p>Чтобы добавить пользователя в группу <code>sudo</code>, выполните следующую команду, заменив <code>username</code> на имя пользователя, которого вы хотите добавить:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">usermod -aG <span class="hljs-built_in">sudo</span> username<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>usermod</code> — команда для изменения учетной записи пользователя.</li>
+<li><code>-aG</code> — параметры, которые указывают на добавление (<code>-a</code>) пользователя в указанную группу (<code>-G</code>).</li>
+<li><code>sudo</code> — имя группы, в которую вы добавляете пользователя.</li>
+</ul>
+<h4 id="Детально-про-параметры-a-и-G-в-команде-usermod">Детально про параметры <code>-a</code> и <code>-G</code> в команде <code>usermod</code></h4>
+<p>Команда <code>usermod</code> используется для изменения учетной записи пользователя в Linux. Параметры <code>-a</code> и <code>-G</code> позволяют управлять группами, к которым принадлежит пользователь.</p>
+<h4 id="1-Параметр-a-append">1. Параметр <code>-a</code> (append)</h4>
+<ul>
+<li><strong>Описание</strong>: Параметр <code>-a</code> (от английского “append”) указывает команде <code>usermod</code> добавлять пользователя в указанные группы, не удаляя его из других групп, к которым он уже принадлежит.</li>
+<li><strong>Важно</strong>: Если не использовать параметр <code>-a</code>, команда <code>usermod</code> заменит все группы, к которым принадлежит пользователь, на новые группы, указанные с помощью параметра <code>-G</code>. Это может привести к потере доступа к другим группам.</li>
+</ul>
+<p><strong>Пример</strong>:
+Если пользователь <code>ivan</code> принадлежит к группам <code>users</code> и <code>developers</code>, и вы выполните команду:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">usermod -G <span class="hljs-built_in">sudo</span> ivan<br></code></pre></td></tr></table></figure>
+<p>То после выполнения этой команды <code>ivan</code> будет принадлежать только к группе <code>sudo</code>, а доступ к группам <code>users</code> и <code>developers</code> будет потерян.</p>
+<h4 id="2-Параметр-G-groups">2. Параметр <code>-G</code> (groups)</h4>
+<ul>
+<li><strong>Описание</strong>: Параметр <code>-G</code> используется для указания списка групп, в которые вы хотите добавить пользователя. Группы перечисляются через запятую без пробелов.</li>
+<li><strong>Важно</strong>: Этот параметр требует указания групп, так как без него команда не будет знать, в какие группы добавлять пользователя.</li>
+</ul>
+<p><strong>Пример</strong>:
+Если вы хотите добавить пользователя <code>ivan</code> в группы <code>sudo</code> и <code>admin</code>, вы должны использовать:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">usermod -aG <span class="hljs-built_in">sudo</span>,admin ivan<br></code></pre></td></tr></table></figure>
+<p>В этом случае <code>ivan</code> будет добавлен в группы <code>sudo</code> и <code>admin</code>, сохранив при этом все свои предыдущие групповые принадлежности.</p>
+<h3 id="4-Проверка-добавления-пользователя-в-группу">4. Проверка добавления пользователя в группу</h3>
+<p>Чтобы убедиться, что пользователь был успешно добавлен в группу <code>sudo</code>, выполните следующую команду:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">groups</span> username<br></code></pre></td></tr></table></figure>
+<p>Вы должны увидеть <code>sudo</code> в списке групп, к которым принадлежит пользователь.</p>
+<h3 id="5-Применение-изменений">5. Применение изменений</h3>
+<p>Для того чтобы изменения вступили в силу, пользователь должен выйти из системы и войти снова. Это необходимо для обновления групповых привилегий.</p>
+<h3 id="6-Проверка-прав-sudo">6. Проверка прав sudo</h3>
+<p>После повторного входа в систему пользователь может проверить свои права, выполнив следующую команду:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">whoami</span><br></code></pre></td></tr></table></figure>
+<p>Если все сделано правильно, вы увидите вывод <code>root</code>, что подтверждает наличие прав суперпользователя.</p>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+</section>
+
+      </section>
+
+      <section class="section-bottom">
+    <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo mb30">
+                        <a href="/">
+                            Philla
+                          </a>
+                    </div>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__menu">
+                        <ul>
+                            
+                                <li>
+                                  <a href="/archives/">
+                                    Архив
+                                  </a>
+                                </li>
+                            
+                                <li>
+                                  <a href="/contacts/">
+                                    Контакты
+                                  </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</section>
+    </main>
+
+    
+      
+<script src="/js/highlight.min.js"></script>
+
+    
+    <script src="/js/main.min.js"></script>
+
+    
+  </body>
+
+</html>

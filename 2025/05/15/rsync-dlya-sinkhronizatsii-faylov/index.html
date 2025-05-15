@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(101750771, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/101750771" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
+  <title>
+    
+    Использование rsync для синхронизации файлов | 
+    Philla
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Rsync — инструмент для синхронизации и передачи файлов">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Использование rsync для синхронизации файлов">
+<meta property="og:url" content="https://phillakt.github.io/2025/05/15/rsync-dlya-sinkhronizatsii-faylov/">
+<meta property="og:site_name" content="Philla">
+<meta property="og:description" content="Rsync — инструмент для синхронизации и передачи файлов">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2025-05-15T14:13:22.000Z">
+<meta property="article:modified_time" content="2025-05-15T14:16:39.022Z">
+<meta property="article:author" content="Philla">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="rsync">
+<meta name="twitter:card" content="summary">
+  
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/augmented-ui.min.css">
+
+  
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <main class="main">
+      <section class="section-top">
+        
+    <header class="header" data-augmented-ui="bl-clip-x">
+      <div class="container">
+        <div class="header__grid">
+          <div class="header__logo">
+            <a href="/">
+              Philla
+            </a>
+          </div>
+          <div class="header__menu">
+            <ul>
+              
+                <li>
+                  <a href="/archives/">
+                    Архив
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/contacts/">
+                    Контакты
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+          <section class="article-detail mt60 mb60">
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+  <article class="mb60">
+    <div class="container-md">
+      <div class="article-detail__wrap" data-augmented-ui="tr-clip-x br-2-clip-y br-2-clip-y">
+
+          
+
+        <h1 class="article-detail__title">Использование rsync для синхронизации файлов</h1>
+        <div class="article-detail__meta">
+          <div class="article-detail__date">2025-05-15</div>
+          <div class="article-detail__tags">
+            
+  <ul class="article__meta--tag-list" itemprop="keywords"><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/rsync/" rel="tag">rsync</a></li></ul>
+
+          </div>
+        </div>
+        <div class="article-detail__content">
+          <p><code>rsync</code> — это мощный инструмент для синхронизации и передачи файлов между локальной и удаленной системами. Он позволяет эффективно копировать файлы и каталоги, используя алгоритм, который минимизирует объем передаваемых данных.</p>
+<h2 id="Установка-rsync">Установка rsync</h2>
+<p>На большинстве Linux-дистрибутивов <code>rsync</code> уже установлен. Если он отсутствует, вы можете установить его с помощью пакетного менеджера:</p>
+<h2 id="Для-Debian-Ubuntu">Для Debian/Ubuntu</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt-get install rsync<br></code></pre></td></tr></table></figure>
+<h2 id="Для-CentOS-Fedora">Для CentOS/Fedora</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> yum install rsync<br></code></pre></td></tr></table></figure>
+<h2 id="Основной-синтаксис">Основной синтаксис</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync [опции] источник назначение<br></code></pre></td></tr></table></figure>
+<h2 id="Примеры-использования">Примеры использования</h2>
+<h3 id="1-Перекачивание-файлов-с-удаленного-сервера-на-локальную-машину">1. Перекачивание файлов с удаленного сервера на локальную машину</h3>
+<p>Чтобы скопировать файл с удаленного сервера на вашу локальную машину, используйте следующую команду:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz username@remote_host:/path/to/remote/file /path/to/local/directory<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>username</code> — ваше имя пользователя на удаленном сервере.</li>
+<li><code>remote_host</code> — IP-адрес или доменное имя удаленного сервера.</li>
+<li><code>/path/to/remote/file</code> — путь к файлу на удаленном сервере.</li>
+<li><code>/path/to/local/directory</code> — путь к директории на вашей локальной машине, куда будет скопирован файл.</li>
+</ul>
+<h3 id="2-Перекачивание-файлов-с-локальной-машины-на-удаленный-сервер">2. Перекачивание файлов с локальной машины на удаленный сервер</h3>
+<p>Чтобы скопировать файл с локальной машины на удаленный сервер, используйте:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz /path/to/local/file username@remote_host:/path/to/remote/directory<br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>/path/to/local/file</code> — путь к файлу на вашей локальной машине.</li>
+<li><code>/path/to/remote/directory</code> — путь к директории на удаленном сервере, куда будет скопирован файл.</li>
+</ul>
+<h3 id="3-Синхронизация-каталогов">3. Синхронизация каталогов</h3>
+<p>Для синхронизации целого каталога используйте флаг <code>-r</code> (рекурсивно):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz /path/to/local/directory/ username@remote_host:/path/to/remote/directory/<br></code></pre></td></tr></table></figure>
+<p>Обратите внимание на слэш в конце пути к локальному каталогу. Он указывает на то, что содержимое каталога должно быть скопировано, а не сам каталог.</p>
+<h3 id="4-Исключение-файлов">4. Исключение файлов</h3>
+<p>Если вы хотите исключить определенные файлы или директории, используйте параметр <code>--exclude</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz --exclude=<span class="hljs-string">&#x27;*.tmp&#x27;</span> /path/to/local/directory/ username@remote_host:/path/to/remote/directory/<br></code></pre></td></tr></table></figure>
+<h3 id="5-Синхронизация-с-удаленного-сервера-на-локальную-машину-с-использованием-SSH">5. Синхронизация с удаленного сервера на локальную машину с использованием SSH</h3>
+<p>По умолчанию <code>rsync</code> использует SSH для передачи данных. Вы можете явно указать это с помощью параметра <code>-e</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz -e ssh username@remote_host:/path/to/remote/file /path/to/local/directory<br></code></pre></td></tr></table></figure>
+<h2 id="Описание-параметров">Описание параметров</h2>
+<ul>
+<li><code>-a</code> — архивный режим; включает в себя рекурсивное копирование и сохраняет символические ссылки, права доступа, временные метки и т. д.</li>
+<li><code>-v</code> — выводит подробную информацию о процессе копирования (verbose).</li>
+<li><code>-z</code> — сжимает данные во время передачи, что может ускорить процесс при медленном соединении.</li>
+<li><code>-r</code> — рекурсивное копирование каталогов.</li>
+<li><code>--exclude</code> — исключает указанные файлы или директории из копирования.</li>
+<li><code>-e</code> — указывает удаленный shell, используемый для соединения (например, SSH).</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+</section>
+
+      </section>
+
+      <section class="section-bottom">
+    <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo mb30">
+                        <a href="/">
+                            Philla
+                          </a>
+                    </div>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__menu">
+                        <ul>
+                            
+                                <li>
+                                  <a href="/archives/">
+                                    Архив
+                                  </a>
+                                </li>
+                            
+                                <li>
+                                  <a href="/contacts/">
+                                    Контакты
+                                  </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</section>
+    </main>
+
+    
+      
+<script src="/js/highlight.min.js"></script>
+
+    
+    <script src="/js/main.min.js"></script>
+
+    
+  </body>
+
+</html>
