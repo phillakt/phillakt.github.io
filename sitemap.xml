@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://philla.ru/2025/05/15/rsync-dlya-sinkhronizatsii-faylov/</loc>
+    <loc>https://philla.ru/2025/05/16/rabota-s-grep-osnovy-i-primery/</loc>
     <lastmod>
       
-        1747424714301
+        1747425626780
       
     </lastmod>
     <changefreq>monthly</changefreq>
@@ -16,7 +16,7 @@
     <loc>https://philla.ru/2025/05/16/poisk-faylov-s-pomoshchyu-komandy-find-v-linux/</loc>
     <lastmod>
       
-        1747419583161
+        1747425624071
       
     </lastmod>
     <changefreq>monthly</changefreq>
@@ -24,10 +24,10 @@
   </url>
   
   <url>
-    <loc>https://philla.ru/2025/05/16/rabota-s-grep-osnovy-i-primery/</loc>
+    <loc>https://philla.ru/2025/05/15/rsync-dlya-sinkhronizatsii-faylov/</loc>
     <lastmod>
       
-        1747419434978
+        1747424714301
       
     </lastmod>
     <changefreq>monthly</changefreq>
