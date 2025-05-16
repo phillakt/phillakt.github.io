@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(101750771, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/101750771" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  
+  <title>
+    
+    Поиск файлов с помощью команды find в Linux | 
+    Philla
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="find позволяет выполнять сложные поисковые запросы, используя различные критерии">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Поиск файлов с помощью команды find в Linux">
+<meta property="og:url" content="https://phillakt.github.io/2025/05/16/poisk-faylov-s-pomoshchyu-komandy-find-v-linux/">
+<meta property="og:site_name" content="Philla">
+<meta property="og:description" content="find позволяет выполнять сложные поисковые запросы, используя различные критерии">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2025-05-16T18:16:31.000Z">
+<meta property="article:modified_time" content="2025-05-16T18:19:43.161Z">
+<meta property="article:author" content="Philla">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="find">
+<meta name="twitter:card" content="summary">
+  
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+<link rel="stylesheet" href="/css/augmented-ui.min.css">
+
+  
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <main class="main">
+      <section class="section-top">
+        
+    <header class="header" data-augmented-ui="bl-clip-x">
+      <div class="container">
+        <div class="header__grid">
+          <div class="header__logo">
+            <a href="/">
+              Philla
+            </a>
+          </div>
+          <div class="header__menu">
+            <ul>
+              
+                <li>
+                  <a href="/archives/">
+                    Архив
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="/contacts/">
+                    Контакты
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+          <section class="article-detail mt60 mb60">
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+  <article class="mb60">
+    <div class="container-md">
+      <div class="article-detail__wrap" data-augmented-ui="tr-clip-x br-2-clip-y br-2-clip-y">
+
+          
+
+        <h1 class="article-detail__title">Поиск файлов с помощью команды find в Linux</h1>
+        <div class="article-detail__meta">
+          <div class="article-detail__date">2025-05-16</div>
+          <div class="article-detail__tags">
+            
+  <ul class="article__meta--tag-list" itemprop="keywords"><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/find/" rel="tag">find</a></li><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+          </div>
+        </div>
+        <div class="article-detail__content">
+          <p>Команда <code>find</code> в Linux — это инструмент для поиска файлов и каталогов в файловой системе. Она позволяет выполнять сложные поисковые запросы, используя различные критерии, такие как имя файла, тип, размер, время изменения и другие атрибуты.</p>
+<h2 id="Основной-синтаксис-команды-find"><a href="#Основной-синтаксис-команды-find" class="headerlink" title="Основной синтаксис команды find"></a>Основной синтаксис команды <code>find</code></h2><p>Синтаксис команды <code>find</code> выглядит следующим образом:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find [путь] [условия поиска] [действия]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>путь</strong>: Указывает каталог, в котором будет производиться поиск. Если путь не указан, <code>find</code> будет искать в текущем каталоге.</li>
+<li><strong>условия поиска</strong>: Критерии, по которым будет производиться поиск (например, имя файла, тип и т.д.).</li>
+<li><strong>действия</strong>: Действия, которые будут выполнены над найденными файлами (например, вывести на экран, удалить и т.д.).</li>
+</ul>
+<h2 id="Примеры-использования-команды-find"><a href="#Примеры-использования-команды-find" class="headerlink" title="Примеры использования команды find"></a>Примеры использования команды <code>find</code></h2><h3 id="1-Поиск-файлов-по-имени"><a href="#1-Поиск-файлов-по-имени" class="headerlink" title="1. Поиск файлов по имени"></a>1. Поиск файлов по имени</h3><p>Чтобы найти файлы с определённым именем, используйте опцию <code>-name</code>. Например, чтобы найти файлы с именем <code>example.txt</code> в каталоге <code>/home/user</code>, выполните:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /home/user -name <span class="hljs-string">&quot;example.txt&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-Поиск-файлов-с-использованием-подстановочных-знаков"><a href="#2-Поиск-файлов-с-использованием-подстановочных-знаков" class="headerlink" title="2. Поиск файлов с использованием подстановочных знаков"></a>2. Поиск файлов с использованием подстановочных знаков</h3><p>Вы можете использовать подстановочные знаки (<code>*</code> и <code>?</code>) для поиска файлов с частичным совпадением. Например, чтобы найти все файлы с расширением <code>.md</code> в текущем каталоге и его подкаталогах:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find . -name <span class="hljs-string">&quot;*.md&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-Поиск-файлов-по-типу"><a href="#3-Поиск-файлов-по-типу" class="headerlink" title="3. Поиск файлов по типу"></a>3. Поиск файлов по типу</h3><p>Для поиска файлов определённого типа используйте опцию <code>-type</code>. Например, чтобы найти все каталоги:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /path/to/search -<span class="hljs-built_in">type</span> d<br></code></pre></td></tr></table></figure>
+
+<p>Чтобы найти только обычные файлы:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /path/to/search -<span class="hljs-built_in">type</span> f<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-Поиск-файлов-по-размеру"><a href="#4-Поиск-файлов-по-размеру" class="headerlink" title="4. Поиск файлов по размеру"></a>4. Поиск файлов по размеру</h3><p>Вы можете искать файлы по их размеру с помощью опции <code>-size</code>. Например, чтобы найти файлы размером больше 10 МБ:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /path/to/search -size +10M<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-Поиск-файлов-по-времени-изменения"><a href="#5-Поиск-файлов-по-времени-изменения" class="headerlink" title="5. Поиск файлов по времени изменения"></a>5. Поиск файлов по времени изменения</h3><p>Для поиска файлов, изменённых за определённый период, используйте опции <code>-mtime</code> (изменённые) или <code>-atime</code> (последний доступ). Например, чтобы найти файлы, изменённые за последние 7 дней:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /path/to/search -mtime -7<br></code></pre></td></tr></table></figure>
+
+<h3 id="6-Выполнение-действий-над-найденными-файлами"><a href="#6-Выполнение-действий-над-найденными-файлами" class="headerlink" title="6. Выполнение действий над найденными файлами"></a>6. Выполнение действий над найденными файлами</h3><p>Вы можете выполнять действия над найденными файлами с помощью опции <code>-exec</code>. Например, чтобы удалить все файлы с расширением <code>.tmp</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find /path/to/search -name <span class="hljs-string">&quot;*.tmp&quot;</span> -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> &#123;&#125; \;<br></code></pre></td></tr></table></figure>
+
+<p>В этом примере <code>&#123;&#125;</code> будет заменено на имя найденного файла, а <code>\;</code> указывает на конец команды.</p>
+<h3 id="7-Поиск-файлов-с-использованием-логических-операторов"><a href="#7-Поиск-файлов-с-использованием-логических-операторов" class="headerlink" title="7. Поиск файлов с использованием логических операторов"></a>7. Поиск файлов с использованием логических операторов</h3><p>Вы можете комбинировать условия поиска с помощью логических операторов <code>-and</code>, <code>-or</code> и <code>-not</code>. Например, чтобы найти все файлы с расширением <code>.md</code> или <code>.txt</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">find . \( -name <span class="hljs-string">&quot;*.md&quot;</span> -or -name <span class="hljs-string">&quot;*.txt&quot;</span> \)<br></code></pre></td></tr></table></figure>
+
+<h2 id="Заключение"><a href="#Заключение" class="headerlink" title="Заключение"></a>Заключение</h2><p>Команда <code>find</code> — это мощный инструмент для поиска файлов в Linux, который предоставляет множество возможностей для настройки поиска. С помощью различных опций и условий вы можете легко находить нужные файлы и выполнять над ними действия. Освоив <code>find</code>, вы значительно упростите свою работу с файловой системой.</p>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="javascript:void(0);" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> назад
+      </a>
+    </div>
+  </div>
+
+</section>
+
+      </section>
+
+      <section class="section-bottom">
+    <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo mb30">
+                        <a href="/">
+                            Philla
+                          </a>
+                    </div>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__menu">
+                        <ul>
+                            
+                                <li>
+                                  <a href="/archives/">
+                                    Архив
+                                  </a>
+                                </li>
+                            
+                                <li>
+                                  <a href="/contacts/">
+                                    Контакты
+                                  </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</section>
+    </main>
+
+    
+      
+<script src="/js/highlight.min.js"></script>
+
+    
+    <script src="/js/main.min.js"></script>
+
+    
+  </body>
+
+</html>
