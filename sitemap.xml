@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://philla.ru/contacts/index.html</loc>
+    <lastmod>
+      
+        1747485747972
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://philla.ru/2025/05/16/rabota-s-grep-osnovy-i-primery/</loc>
     <lastmod>
       
@@ -127,17 +138,6 @@
     <lastmod>
       
         1747169279769
-      
-    </lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/contacts/index.html</loc>
-    <lastmod>
-      
-        1745359273525
       
     </lastmod>
     <changefreq>monthly</changefreq>
