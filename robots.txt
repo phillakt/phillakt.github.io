@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /draft/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+
+Sitemap: https://philla.ru/sitemap.xml
