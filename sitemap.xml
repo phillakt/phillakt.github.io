@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://philla.ru/2025/05/20/google-recaptcha-v-html-formy/</loc>
+    <lastmod>
+      
+        1747778862560
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/16/poisk-faylov-s-pomoshchyu-komandy-find-v-linux/</loc>
+    <lastmod>
+      
+        1747778135553
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/2025/05/11/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-xmlhttprequest/</loc>
+    <lastmod>
+      
+        1747777439217
+      
+    </lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://philla.ru/contacts/index.html</loc>
     <lastmod>
       
@@ -24,17 +57,6 @@
   </url>
   
   <url>
-    <loc>https://philla.ru/2025/05/16/poisk-faylov-s-pomoshchyu-komandy-find-v-linux/</loc>
-    <lastmod>
-      
-        1747485199931
-      
-    </lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://philla.ru/2025/05/15/rsync-dlya-sinkhronizatsii-faylov/</loc>
     <lastmod>
       
@@ -50,17 +72,6 @@
     <lastmod>
       
         1747319866033
-      
-    </lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/2025/05/11/find-rekursivnaya-zamena-prav-na-direktorii-i-fayly/</loc>
-    <lastmod>
-      
-        1747319665652
       
     </lastmod>
     <changefreq>monthly</changefreq>
@@ -105,17 +116,6 @@
     <lastmod>
       
         1747169313904
-      
-    </lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/2025/05/11/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-xmlhttprequest/</loc>
-    <lastmod>
-      
-        1747169311066
       
     </lastmod>
     <changefreq>monthly</changefreq>
