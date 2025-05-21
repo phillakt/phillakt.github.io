@@ -111,12 +111,14 @@
         </div>
         <div class="article-detail__content">
           <p><code>grep</code> — это инструмент командной строки в Unix-подобных операционных системах, который используется для поиска текста в файлах. Название <code>grep</code> происходит от команды <code>g/re/p</code>, которая использовалась в редакторе <code>ed</code> для поиска строк, соответствующих регулярному выражению.</p>
-<h2 id="Основные-функции-grep"><a href="#Основные-функции-grep" class="headerlink" title="Основные функции grep"></a>Основные функции <code>grep</code></h2><ul>
+<h2 id="Основные-функции-grep">Основные функции <code>grep</code></h2>
+<ul>
 <li>Поиск текста в файлах.</li>
 <li>Использование регулярных выражений для более сложных поисков.</li>
 <li>Фильтрация вывода других команд.</li>
 </ul>
-<h2 id="Аргументы-grep"><a href="#Аргументы-grep" class="headerlink" title="Аргументы grep"></a>Аргументы <code>grep</code></h2><p>Вот некоторые из основных аргументов, которые часто используются с <code>grep</code>:</p>
+<h2 id="Аргументы-grep">Аргументы <code>grep</code></h2>
+<p>Вот некоторые из основных аргументов, которые часто используются с <code>grep</code>:</p>
 <ul>
 <li><code>-l</code>: Печатает только имена файлов, содержащих совпадения.</li>
 <li><code>-i</code>: Игнорирует регистр при поиске.</li>
@@ -126,10 +128,12 @@
 <li><code>-c</code>: Печатает количество совпадений в каждом файле.</li>
 <li><code>-e</code>: Позволяет указать несколько шаблонов для поиска.</li>
 </ul>
-<h2 id="Пример-использования-grep"><a href="#Пример-использования-grep" class="headerlink" title="Пример использования grep"></a>Пример использования <code>grep</code></h2><h3 id="Поиск-текста-в-файлах"><a href="#Поиск-текста-в-файлах" class="headerlink" title="Поиск текста в файлах"></a>Поиск текста в файлах</h3><p>Допустим, у вас есть каталог <code>local/templates/template/</code>, и вы хотите найти все файлы, содержащие текст “other text”. Вы можете использовать следующую команду:</p>
+<h2 id="Пример-использования-grep">Пример использования <code>grep</code></h2>
+<h3 id="Поиск-текста-в-файлах">Поиск текста в файлах</h3>
+<p>Допустим, у вас есть каталог <code>local/templates/template/</code>, и вы хотите найти все файлы, содержащие текст “other text”. Вы можете использовать следующую команду:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep -lir <span class="hljs-string">&quot;other text&quot;</span> <span class="hljs-built_in">local</span>/templates/template/*<br></code></pre></td></tr></table></figure>
-
-<h3 id="Разбор-команды"><a href="#Разбор-команды" class="headerlink" title="Разбор команды"></a>Разбор команды</h3><ul>
+<h3 id="Разбор-команды">Разбор команды</h3>
+<ul>
 <li><code>grep</code>: команда, которую мы вызываем.</li>
 <li><code>-l</code>: выводит только имена файлов, в которых найден текст.</li>
 <li><code>-i</code>: игнорирует регистр, т.е. “Other Text”, “other text” и “OTHER TEXT” будут считаться совпадениями.</li>
@@ -137,22 +141,19 @@
 <li><code>&quot;other text&quot;</code>: текст, который мы ищем. Обратите внимание, что текст заключен в кавычки.</li>
 <li><code>local/templates/template/*</code>: путь к файлам, в которых будет производиться поиск. Звездочка (<code>*</code>) означает, что поиск будет производиться во всех файлах в указанной директории.</li>
 </ul>
-<h3 id="Примеры-других-команд-grep"><a href="#Примеры-других-команд-grep" class="headerlink" title="Примеры других команд grep"></a>Примеры других команд <code>grep</code></h3><p><strong>Поиск с учетом регистра</strong>:</p>
+<h3 id="Примеры-других-команд-grep">Примеры других команд <code>grep</code></h3>
+<p><strong>Поиск с учетом регистра</strong>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep -r <span class="hljs-string">&quot;Other Text&quot;</span> <span class="hljs-built_in">local</span>/templates/template/*<br></code></pre></td></tr></table></figure>
-
 <p><strong>Поиск с выводом номера строки</strong>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep -rn <span class="hljs-string">&quot;other text&quot;</span> <span class="hljs-built_in">local</span>/templates/template/*<br></code></pre></td></tr></table></figure>
-
 <p><strong>Подсчет количества совпадений</strong>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep -rc <span class="hljs-string">&quot;other text&quot;</span> <span class="hljs-built_in">local</span>/templates/template/*<br></code></pre></td></tr></table></figure>
-
 <p><strong>Инвертированный поиск</strong> (выводит строки, не содержащие текст):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep -rv <span class="hljs-string">&quot;other text&quot;</span> <span class="hljs-built_in">local</span>/templates/template/*<br></code></pre></td></tr></table></figure>
-
 <p><strong>Поиск нескольких шаблонов</strong>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grep -r -e <span class="hljs-string">&quot;other text&quot;</span> -e <span class="hljs-string">&quot;another text&quot;</span> <span class="hljs-built_in">local</span>/templates/template/*<br></code></pre></td></tr></table></figure>
-
-<h2 id="Итог"><a href="#Итог" class="headerlink" title="Итог"></a>Итог</h2><p><code>grep</code> — это инструмент для поиска текста в файлах, который может значительно упростить вашу работу с текстовыми данными. С помощью различных аргументов и опций вы можете адаптировать его под свои нужды. </p>
+<h2 id="Итог">Итог</h2>
+<p><code>grep</code> — это инструмент для поиска текста в файлах, который может значительно упростить вашу работу с текстовыми данными. С помощью различных аргументов и опций вы можете адаптировать его под свои нужды.</p>
 
         </div>
       </div>

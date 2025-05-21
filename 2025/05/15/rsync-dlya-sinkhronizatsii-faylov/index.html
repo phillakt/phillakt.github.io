@@ -111,40 +111,43 @@
         </div>
         <div class="article-detail__content">
           <p><code>rsync</code> — это мощный инструмент для синхронизации и передачи файлов между локальной и удаленной системами. Он позволяет эффективно копировать файлы и каталоги, используя алгоритм, который минимизирует объем передаваемых данных.</p>
-<h2 id="Установка-rsync"><a href="#Установка-rsync" class="headerlink" title="Установка rsync"></a>Установка rsync</h2><p>На большинстве Linux-дистрибутивов <code>rsync</code> уже установлен. Если он отсутствует, вы можете установить его с помощью пакетного менеджера:</p>
-<h2 id="Для-Debian-Ubuntu"><a href="#Для-Debian-Ubuntu" class="headerlink" title="Для Debian&#x2F;Ubuntu"></a>Для Debian&#x2F;Ubuntu</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt-get install rsync<br></code></pre></td></tr></table></figure>
-
-<h2 id="Для-CentOS-Fedora"><a href="#Для-CentOS-Fedora" class="headerlink" title="Для CentOS&#x2F;Fedora"></a>Для CentOS&#x2F;Fedora</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> yum install rsync<br></code></pre></td></tr></table></figure>
-
-<h2 id="Основной-синтаксис"><a href="#Основной-синтаксис" class="headerlink" title="Основной синтаксис"></a>Основной синтаксис</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync [опции] источник назначение<br></code></pre></td></tr></table></figure>
-
-<h2 id="Примеры-использования"><a href="#Примеры-использования" class="headerlink" title="Примеры использования"></a>Примеры использования</h2><h3 id="1-Перекачивание-файлов-с-удаленного-сервера-на-локальную-машину"><a href="#1-Перекачивание-файлов-с-удаленного-сервера-на-локальную-машину" class="headerlink" title="1. Перекачивание файлов с удаленного сервера на локальную машину"></a>1. Перекачивание файлов с удаленного сервера на локальную машину</h3><p>Чтобы скопировать файл с удаленного сервера на вашу локальную машину, используйте следующую команду:</p>
+<h2 id="Установка-rsync">Установка rsync</h2>
+<p>На большинстве Linux-дистрибутивов <code>rsync</code> уже установлен. Если он отсутствует, вы можете установить его с помощью пакетного менеджера:</p>
+<h2 id="Для-Debian-Ubuntu">Для Debian/Ubuntu</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt-get install rsync<br></code></pre></td></tr></table></figure>
+<h2 id="Для-CentOS-Fedora">Для CentOS/Fedora</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> yum install rsync<br></code></pre></td></tr></table></figure>
+<h2 id="Основной-синтаксис">Основной синтаксис</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync [опции] источник назначение<br></code></pre></td></tr></table></figure>
+<h2 id="Примеры-использования">Примеры использования</h2>
+<h3 id="1-Перекачивание-файлов-с-удаленного-сервера-на-локальную-машину">1. Перекачивание файлов с удаленного сервера на локальную машину</h3>
+<p>Чтобы скопировать файл с удаленного сервера на вашу локальную машину, используйте следующую команду:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz username@remote_host:/path/to/remote/file /path/to/local/directory<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>username</code> — ваше имя пользователя на удаленном сервере.</li>
 <li><code>remote_host</code> — IP-адрес или доменное имя удаленного сервера.</li>
 <li><code>/path/to/remote/file</code> — путь к файлу на удаленном сервере.</li>
 <li><code>/path/to/local/directory</code> — путь к директории на вашей локальной машине, куда будет скопирован файл.</li>
 </ul>
-<h3 id="2-Перекачивание-файлов-с-локальной-машины-на-удаленный-сервер"><a href="#2-Перекачивание-файлов-с-локальной-машины-на-удаленный-сервер" class="headerlink" title="2. Перекачивание файлов с локальной машины на удаленный сервер"></a>2. Перекачивание файлов с локальной машины на удаленный сервер</h3><p>Чтобы скопировать файл с локальной машины на удаленный сервер, используйте:</p>
+<h3 id="2-Перекачивание-файлов-с-локальной-машины-на-удаленный-сервер">2. Перекачивание файлов с локальной машины на удаленный сервер</h3>
+<p>Чтобы скопировать файл с локальной машины на удаленный сервер, используйте:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz /path/to/local/file username@remote_host:/path/to/remote/directory<br></code></pre></td></tr></table></figure>
-
 <ul>
 <li><code>/path/to/local/file</code> — путь к файлу на вашей локальной машине.</li>
 <li><code>/path/to/remote/directory</code> — путь к директории на удаленном сервере, куда будет скопирован файл.</li>
 </ul>
-<h3 id="3-Синхронизация-каталогов"><a href="#3-Синхронизация-каталогов" class="headerlink" title="3. Синхронизация каталогов"></a>3. Синхронизация каталогов</h3><p>Для синхронизации целого каталога используйте флаг <code>-r</code> (рекурсивно):</p>
+<h3 id="3-Синхронизация-каталогов">3. Синхронизация каталогов</h3>
+<p>Для синхронизации целого каталога используйте флаг <code>-r</code> (рекурсивно):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz /path/to/local/directory/ username@remote_host:/path/to/remote/directory/<br></code></pre></td></tr></table></figure>
-
 <p>Обратите внимание на слэш в конце пути к локальному каталогу. Он указывает на то, что содержимое каталога должно быть скопировано, а не сам каталог.</p>
-<h3 id="4-Исключение-файлов"><a href="#4-Исключение-файлов" class="headerlink" title="4. Исключение файлов"></a>4. Исключение файлов</h3><p>Если вы хотите исключить определенные файлы или директории, используйте параметр <code>--exclude</code>:</p>
+<h3 id="4-Исключение-файлов">4. Исключение файлов</h3>
+<p>Если вы хотите исключить определенные файлы или директории, используйте параметр <code>--exclude</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz --exclude=<span class="hljs-string">&#x27;*.tmp&#x27;</span> /path/to/local/directory/ username@remote_host:/path/to/remote/directory/<br></code></pre></td></tr></table></figure>
-
-<h3 id="5-Синхронизация-с-удаленного-сервера-на-локальную-машину-с-использованием-SSH"><a href="#5-Синхронизация-с-удаленного-сервера-на-локальную-машину-с-использованием-SSH" class="headerlink" title="5. Синхронизация с удаленного сервера на локальную машину с использованием SSH"></a>5. Синхронизация с удаленного сервера на локальную машину с использованием SSH</h3><p>По умолчанию <code>rsync</code> использует SSH для передачи данных. Вы можете явно указать это с помощью параметра <code>-e</code>:</p>
+<h3 id="5-Синхронизация-с-удаленного-сервера-на-локальную-машину-с-использованием-SSH">5. Синхронизация с удаленного сервера на локальную машину с использованием SSH</h3>
+<p>По умолчанию <code>rsync</code> использует SSH для передачи данных. Вы можете явно указать это с помощью параметра <code>-e</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rsync -avz -e ssh username@remote_host:/path/to/remote/file /path/to/local/directory<br></code></pre></td></tr></table></figure>
-
-<h2 id="Описание-параметров"><a href="#Описание-параметров" class="headerlink" title="Описание параметров"></a>Описание параметров</h2><ul>
+<h2 id="Описание-параметров">Описание параметров</h2>
+<ul>
 <li><code>-a</code> — архивный режим; включает в себя рекурсивное копирование и сохраняет символические ссылки, права доступа, временные метки и т. д.</li>
 <li><code>-v</code> — выводит подробную информацию о процессе копирования (verbose).</li>
 <li><code>-z</code> — сжимает данные во время передачи, что может ускорить процесс при медленном соединении.</li>
