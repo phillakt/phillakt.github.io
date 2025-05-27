@@ -111,45 +111,44 @@
         </div>
         <div class="article-detail__content">
           <p>Netplan — современный инструмент для настройки сети в Ubuntu (начиная с версии 17.10), который использует YAML-конфигурации.</p>
-<h2 id="Шаги-настройки">Шаги настройки</h2>
-<h3 id="1-Просмотр-файлов-конфигурации-Netplan">1. Просмотр файлов конфигурации Netplan</h3>
-<p>Конфигурационные файлы находятся в каталоге <code>/etc/netplan/</code>. Чтобы увидеть их список, выполните:</p>
+<h2 id="Шаги-настройки"><a href="#Шаги-настройки" class="headerlink" title="Шаги настройки"></a>Шаги настройки</h2><h3 id="1-Просмотр-файлов-конфигурации-Netplan"><a href="#1-Просмотр-файлов-конфигурации-Netplan" class="headerlink" title="1. Просмотр файлов конфигурации Netplan"></a>1. Просмотр файлов конфигурации Netplan</h3><p>Конфигурационные файлы находятся в каталоге <code>/etc/netplan/</code>. Чтобы увидеть их список, выполните:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /etc/netplan/<br></code></pre></td></tr></table></figure>
+
 <p>Обычно это один или несколько файлов с расширением <code>.yaml</code>, например <code>01-netcfg.yaml</code> или <code>50-cloud-init.yaml</code>.</p>
-<h3 id="2-Редактирование-файла-конфигурации">2. Редактирование файла конфигурации</h3>
-<p>Откройте нужный файл с помощью текстового редактора, например <code>nano</code>:</p>
+<h3 id="2-Редактирование-файла-конфигурации"><a href="#2-Редактирование-файла-конфигурации" class="headerlink" title="2. Редактирование файла конфигурации"></a>2. Редактирование файла конфигурации</h3><p>Откройте нужный файл с помощью текстового редактора, например <code>nano</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> nano /etc/netplan/01-netcfg.yaml<br></code></pre></td></tr></table></figure>
-<h3 id="3-Пример-конфигурации">3. Пример конфигурации</h3>
-<p>Статический IP</p>
+
+<h3 id="3-Пример-конфигурации"><a href="#3-Пример-конфигурации" class="headerlink" title="3. Пример конфигурации"></a>3. Пример конфигурации</h3><p>Статический IP</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">network:</span><br>  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span><br>  <span class="hljs-attr">renderer:</span> <span class="hljs-string">networkd</span><br>  <span class="hljs-attr">ethernets:</span><br>    <span class="hljs-attr">enp0s3:</span>  <span class="hljs-comment"># Замените на имя вашего сетевого интерфейса</span><br>      <span class="hljs-attr">dhcp4:</span> <span class="hljs-literal">no</span><br>      <span class="hljs-attr">addresses:</span><br>        <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.0</span><span class="hljs-number">.10</span><span class="hljs-string">/24</span>  <span class="hljs-comment"># Статический IP и маска подсети</span><br>      <span class="hljs-attr">gateway4:</span> <span class="hljs-number">192.168</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>  <span class="hljs-comment"># Шлюз по умолчанию</span><br>      <span class="hljs-attr">nameservers:</span><br>        <span class="hljs-attr">addresses:</span><br>          <span class="hljs-bullet">-</span> <span class="hljs-number">8.8</span><span class="hljs-number">.8</span><span class="hljs-number">.8</span><br>          <span class="hljs-bullet">-</span> <span class="hljs-number">8.8</span><span class="hljs-number">.4</span><span class="hljs-number">.4</span><br></code></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>Важно:</strong> Добавление строки <code>renderer: networkd</code> явно указывает использовать systemd-networkd для управления сетью, что является стандартом для серверных систем Ubuntu. Если не указать, Netplan выберет рендерер по умолчанию.</p>
 </blockquote>
 <p>DHCP</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">network:</span><br>  <span class="hljs-attr">version:</span> <span class="hljs-number">2</span><br>  <span class="hljs-attr">renderer:</span> <span class="hljs-string">networkd</span><br>  <span class="hljs-attr">ethernets:</span><br>    <span class="hljs-attr">ens33:</span>  <span class="hljs-comment"># Замените на имя вашего сетевого интерфейса</span><br>      <span class="hljs-attr">dhcp4:</span> <span class="hljs-literal">yes</span><br></code></pre></td></tr></table></figure>
-<h3 id="4-Сохранение-изменений">4. Сохранение изменений</h3>
-<p>В <code>nano</code>: нажмите <code>Ctrl + X</code>, затем <code>Y</code> и <code>Enter</code>.</p>
-<h3 id="5-Применение-настроек">5. Применение настроек</h3>
-<p>Чтобы применить изменения, выполните:</p>
+
+<h3 id="4-Сохранение-изменений"><a href="#4-Сохранение-изменений" class="headerlink" title="4. Сохранение изменений"></a>4. Сохранение изменений</h3><p>В <code>nano</code>: нажмите <code>Ctrl + X</code>, затем <code>Y</code> и <code>Enter</code>.</p>
+<h3 id="5-Применение-настроек"><a href="#5-Применение-настроек" class="headerlink" title="5. Применение настроек"></a>5. Применение настроек</h3><p>Чтобы применить изменения, выполните:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> netplan apply<br></code></pre></td></tr></table></figure>
+
 <p>Если возникли ошибки, можно запустить с отладкой:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> netplan --debug apply<br></code></pre></td></tr></table></figure>
-<h3 id="6-Проверка-состояния-сети">6. Проверка состояния сети</h3>
-<p>Проверьте настройки с помощью:</p>
+
+<h3 id="6-Проверка-состояния-сети"><a href="#6-Проверка-состояния-сети" class="headerlink" title="6. Проверка состояния сети"></a>6. Проверка состояния сети</h3><p>Проверьте настройки с помощью:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip a<br></code></pre></td></tr></table></figure>
+
 <p>или, если установлен пакет <code>net-tools</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ifconfig<br></code></pre></td></tr></table></figure>
-<h2 id="Дополнительные-советы">Дополнительные советы</h2>
-<ul>
+
+<h2 id="Дополнительные-советы"><a href="#Дополнительные-советы" class="headerlink" title="Дополнительные советы"></a>Дополнительные советы</h2><ul>
 <li>Чтобы узнать имя сетевого интерфейса, используйте команду:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip <span class="hljs-built_in">link</span><br></code></pre></td></tr></table></figure>
+
 <ul>
-<li>
-<p>Если вы настраиваете сервер с графическим окружением, возможно, используется другой рендерер (<code>NetworkManager</code>). В таком случае можно указать в конфигурации <code>renderer: NetworkManager</code>.</p>
+<li><p>Если вы настраиваете сервер с графическим окружением, возможно, используется другой рендерер (<code>NetworkManager</code>). В таком случае можно указать в конфигурации <code>renderer: NetworkManager</code>.</p>
 </li>
-<li>
-<p>YAML чувствителен к отступам — используйте пробелы, не табуляцию.</p>
+<li><p>YAML чувствителен к отступам — используйте пробелы, не табуляцию.</p>
 </li>
 </ul>
 

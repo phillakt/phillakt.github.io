@@ -110,45 +110,42 @@
           </div>
         </div>
         <div class="article-detail__content">
-          <h2 id="Обзор-и-использование-утилиты-ncdu-для-анализа-дискового-пространства">Обзор и использование утилиты <code>ncdu</code> для анализа дискового пространства</h2>
-<p><code>ncdu</code> (NCurses Disk Usage) — это удобная консольная утилита для анализа использования дискового пространства в Linux и других UNIX-подобных системах. Она позволяет быстро и наглядно увидеть, какие папки и файлы занимают больше всего места, и помогает эффективно управлять хранилищем.</p>
-<h2 id="Почему-ncdu">Почему <code>ncdu</code>?</h2>
-<ul>
+          <h2 id="Обзор-и-использование-утилиты-ncdu-для-анализа-дискового-пространства"><a href="#Обзор-и-использование-утилиты-ncdu-для-анализа-дискового-пространства" class="headerlink" title="Обзор и использование утилиты ncdu для анализа дискового пространства"></a>Обзор и использование утилиты <code>ncdu</code> для анализа дискового пространства</h2><p><code>ncdu</code> (NCurses Disk Usage) — это удобная консольная утилита для анализа использования дискового пространства в Linux и других UNIX-подобных системах. Она позволяет быстро и наглядно увидеть, какие папки и файлы занимают больше всего места, и помогает эффективно управлять хранилищем.</p>
+<h2 id="Почему-ncdu"><a href="#Почему-ncdu" class="headerlink" title="Почему ncdu?"></a>Почему <code>ncdu</code>?</h2><ul>
 <li><strong>Интерактивный интерфейс</strong> — удобный текстовый UI на базе ncurses.</li>
 <li><strong>Быстрая работа</strong> — сканирует каталоги и отображает результаты в реальном времени.</li>
 <li><strong>Простота использования</strong> — не требует сложных настроек.</li>
 <li><strong>Удаление файлов и папок</strong> — можно удалять объекты прямо из интерфейса.</li>
 <li><strong>Кроссплатформенность</strong> — работает в большинстве UNIX-систем.</li>
 </ul>
-<h2 id="Установка">Установка</h2>
-<p>На популярных дистрибутивах Linux <code>ncdu</code> обычно доступен в стандартных репозиториях.</p>
+<h2 id="Установка"><a href="#Установка" class="headerlink" title="Установка"></a>Установка</h2><p>На популярных дистрибутивах Linux <code>ncdu</code> обычно доступен в стандартных репозиториях.</p>
 <ul>
-<li>Debian/Ubuntu:</li>
+<li>Debian&#x2F;Ubuntu:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt update<br><span class="hljs-built_in">sudo</span> apt install ncdu<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li>CentOS/RHEL (через EPEL):</li>
+<li>CentOS&#x2F;RHEL (через EPEL):</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> yum install epel-release<br><span class="hljs-built_in">sudo</span> yum install ncdu<br></code></pre></td></tr></table></figure>
-<h2 id="Основные-команды-и-использование">Основные команды и использование</h2>
-<h3 id="Запуск">Запуск</h3>
-<p>Чтобы просканировать текущую директорию:</p>
+
+<h2 id="Основные-команды-и-использование"><a href="#Основные-команды-и-использование" class="headerlink" title="Основные команды и использование"></a>Основные команды и использование</h2><h3 id="Запуск"><a href="#Запуск" class="headerlink" title="Запуск"></a>Запуск</h3><p>Чтобы просканировать текущую директорию:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ncdu<br></code></pre></td></tr></table></figure>
+
 <p>Чтобы просканировать конкретный каталог:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ncdu /путь/к/директории<br></code></pre></td></tr></table></figure>
-<h3 id="Навигация">Навигация</h3>
-<ul>
-<li><strong>Стрелки вверх/вниз</strong> — перемещение по списку файлов и папок.</li>
+
+<h3 id="Навигация"><a href="#Навигация" class="headerlink" title="Навигация"></a>Навигация</h3><ul>
+<li><strong>Стрелки вверх&#x2F;вниз</strong> — перемещение по списку файлов и папок.</li>
 <li><strong>Enter</strong> — перейти внутрь выбранной папки.</li>
 <li><strong>Backspace</strong> — вернуться на уровень выше.</li>
 <li><strong>d</strong> — удалить выбранный файл или папку (будьте осторожны!).</li>
 <li><strong>q</strong> — выйти из программы.</li>
 </ul>
-<h3 id="Пример">Пример</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ncdu /var/log<br></code></pre></td></tr></table></figure>
+<h3 id="Пример"><a href="#Пример" class="headerlink" title="Пример"></a>Пример</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ncdu /var/log<br></code></pre></td></tr></table></figure>
+
 <p>Проанализирует папку <code>/var/log</code> и покажет, какие файлы занимают больше всего места.</p>
-<h2 id="Полезные-опции">Полезные опции</h2>
-<ul>
+<h2 id="Полезные-опции"><a href="#Полезные-опции" class="headerlink" title="Полезные опции"></a>Полезные опции</h2><ul>
 <li><code>-x</code> — не переходить в другие файловые системы (например, не заходить в смонтированные диски).</li>
 <li><code>-q</code> — тихий режим (меньше сообщений).</li>
 <li><code>-r</code> — режим только для чтения (без возможности удаления).</li>
@@ -156,16 +153,15 @@
 </ul>
 <p>Пример:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ncdu -x /home<br></code></pre></td></tr></table></figure>
+
 <p>Просканирует домашнюю директорию, не заходя в смонтированные файловые системы.</p>
-<h2 id="Почему-стоит-использовать-ncdu">Почему стоит использовать <code>ncdu</code>?</h2>
-<ul>
+<h2 id="Почему-стоит-использовать-ncdu"><a href="#Почему-стоит-использовать-ncdu" class="headerlink" title="Почему стоит использовать ncdu?"></a>Почему стоит использовать <code>ncdu</code>?</h2><ul>
 <li>Быстрое выявление “тяжёлых” папок и файлов.</li>
 <li>Удобный интерфейс для работы в терминале.</li>
 <li>Возможность очистки пространства без выхода из утилиты.</li>
 <li>Лёгкий вес и простота установки.</li>
 </ul>
-<h2 id="Итог">Итог</h2>
-<p><code>ncdu</code> — отличный инструмент для системных администраторов и пользователей, которые хотят контролировать использование дискового пространства. Он помогает быстро находить крупные файлы и папки, освобождая место на диске и упрощая обслуживание системы.</p>
+<h2 id="Итог"><a href="#Итог" class="headerlink" title="Итог"></a>Итог</h2><p><code>ncdu</code> — отличный инструмент для системных администраторов и пользователей, которые хотят контролировать использование дискового пространства. Он помогает быстро находить крупные файлы и папки, освобождая место на диске и упрощая обслуживание системы.</p>
 
         </div>
       </div>
