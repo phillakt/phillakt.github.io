@@ -3,6 +3,19 @@
   
   <url>
     <loc>https://philla.ru/
+      2025/05/15/podklyuchenie-k-mysql-i-zagruzka-dampa-bazy-dannykh/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-05-15
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
       2025/05/20/google-recaptcha-v-html-formy/
     </loc>
     <changefreq>monthly</changefreq>
@@ -82,19 +95,6 @@
   <url>
     <loc>https://philla.ru/
       2025/05/15/rsync-dlya-sinkhronizatsii-faylov/
-    </loc>
-    <changefreq>monthly</changefreq>
-    
-    <lastmod>
-      2025-05-15
-    </lastmod>
-    
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/
-      2025/05/15/podklyuchenie-k-mysql-i-zagruzka-dampa-bazy-dannykh/
     </loc>
     <changefreq>monthly</changefreq>
     
