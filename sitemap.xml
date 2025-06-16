@@ -3,51 +3,38 @@
   
   <url>
     <loc>https://philla.ru/
+      2025/05/11/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-xmlhttprequest/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-05-11
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
+      2025/05/13/nastroyka-seti-netplan/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-05-13
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
       2025/05/15/podklyuchenie-k-mysql-i-zagruzka-dampa-bazy-dannykh/
     </loc>
     <changefreq>monthly</changefreq>
     
     <lastmod>
       2025-05-15
-    </lastmod>
-    
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/
-      2025/06/12/podborka-jquery-bibliotek-dlya-stilizatsii-form/
-    </loc>
-    <changefreq>monthly</changefreq>
-    
-    <lastmod>
-      2025-06-12
-    </lastmod>
-    
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/
-      2025/05/20/google-recaptcha-v-html-formy/
-    </loc>
-    <changefreq>monthly</changefreq>
-    
-    <lastmod>
-      2025-05-20
-    </lastmod>
-    
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/
-      2025/05/21/vnedrenie-mikrorazmetki-schema-dlya-osnovnykh-tipov-stranits-sayta/
-    </loc>
-    <changefreq>monthly</changefreq>
-    
-    <lastmod>
-      2025-05-21
     </lastmod>
     
     <priority>0.6</priority>
@@ -68,12 +55,38 @@
   
   <url>
     <loc>https://philla.ru/
-      2025/05/11/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-xmlhttprequest/
+      2025/05/20/google-recaptcha-v-html-formy/
     </loc>
     <changefreq>monthly</changefreq>
     
     <lastmod>
-      2025-05-11
+      2025-05-20
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
+      2025/06/12/podborka-jquery-bibliotek-dlya-stilizatsii-form/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-06-12
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
+      2025/05/21/vnedrenie-mikrorazmetki-schema-dlya-osnovnykh-tipov-stranits-sayta/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-05-21
     </lastmod>
     
     <priority>0.6</priority>
@@ -178,19 +191,6 @@
     
     <lastmod>
       2025-05-01
-    </lastmod>
-    
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/
-      2025/05/13/nastroyka-seti-netplan/
-    </loc>
-    <changefreq>monthly</changefreq>
-    
-    <lastmod>
-      2025-05-13
     </lastmod>
     
     <priority>0.6</priority>
