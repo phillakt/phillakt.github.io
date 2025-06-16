@@ -103,58 +103,59 @@
 <li><code>jQuery Mask Plugin</code> (маски для текстовых полей)</li>
 <li><code>flatpickr</code> календарь (выбор даты, не требует Jquery)</li>
 </ul>
-<h2 id="1-Стилизация-input-type-range-ползунок">1. Стилизация <code>input[type=&quot;range&quot;]</code> (ползунок)</h2>
-<h3 id="Ion-RangeSlider">Ion.RangeSlider</h3>
-<ul>
+<h2 id="1-Стилизация-input-type-range-ползунок"><a href="#1-Стилизация-input-type-range-ползунок" class="headerlink" title="1. Стилизация input[type=&quot;range&quot;] (ползунок)"></a>1. Стилизация <code>input[type=&quot;range&quot;]</code> (ползунок)</h2><h3 id="Ion-RangeSlider"><a href="#Ion-RangeSlider" class="headerlink" title="Ion.RangeSlider"></a>Ion.RangeSlider</h3><ul>
 <li><strong>Описание:</strong> Мощный и гибкий слайдер с множеством настроек.</li>
 <li><strong>Особенности:</strong> Поддержка диапазонов, кастомных значений, подсказок, тем.</li>
 <li><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/IonDen/ion.rangeSlider">https://github.com/IonDen/ion.rangeSlider</a></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;range&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&quot;#range&quot;</span>).<span class="hljs-title function_">ionRangeSlider</span>(&#123;<br>  <span class="hljs-attr">min</span>: <span class="hljs-number">0</span>,<br>  <span class="hljs-attr">max</span>: <span class="hljs-number">100</span>,<br>  <span class="hljs-attr">from</span>: <span class="hljs-number">50</span>,<br>  <span class="hljs-attr">skin</span>: <span class="hljs-string">&quot;round&quot;</span><br>&#125;);<br></code></pre></td></tr></table></figure>
-<h2 id="2-Стилизация-input-type-radio-и-input-type-checkbox">2. Стилизация <code>input[type=&quot;radio&quot;]</code> и <code>input[type=&quot;checkbox&quot;]</code></h2>
-<h3 id="iCheck">iCheck</h3>
-<ul>
+
+<h2 id="2-Стилизация-input-type-radio-и-input-type-checkbox"><a href="#2-Стилизация-input-type-radio-и-input-type-checkbox" class="headerlink" title="2. Стилизация input[type=&quot;radio&quot;] и input[type=&quot;checkbox&quot;]"></a>2. Стилизация <code>input[type=&quot;radio&quot;]</code> и <code>input[type=&quot;checkbox&quot;]</code></h2><h3 id="iCheck"><a href="#iCheck" class="headerlink" title="iCheck"></a>iCheck</h3><ul>
 <li><strong>Описание:</strong> Классическая библиотека для стилизации чекбоксов и радиокнопок.</li>
 <li><strong>Особенности:</strong> Множество скинов, поддержка анимаций, легкая интеграция.</li>
 <li><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/fronteed/iCheck">https://github.com/fronteed/iCheck</a></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icheck&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icheck&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;.icheck&#x27;</span>).<span class="hljs-title function_">iCheck</span>(&#123;<br>  <span class="hljs-attr">checkboxClass</span>: <span class="hljs-string">&#x27;icheckbox_square-blue&#x27;</span>,<br>  <span class="hljs-attr">radioClass</span>: <span class="hljs-string">&#x27;iradio_square-blue&#x27;</span>,<br>  <span class="hljs-attr">increaseArea</span>: <span class="hljs-string">&#x27;20%&#x27;</span> <span class="hljs-comment">// увеличивает клик-зону</span><br>&#125;);<br></code></pre></td></tr></table></figure>
-<h2 id="3-Cтилизации-стандартных-селектов">3. Cтилизации стандартных селектов</h2>
-<h3 id="Select2">Select2</h3>
-<ul>
+
+<h2 id="3-Cтилизации-стандартных-селектов"><a href="#3-Cтилизации-стандартных-селектов" class="headerlink" title="3. Cтилизации стандартных селектов"></a>3. Cтилизации стандартных селектов</h2><h3 id="Select2"><a href="#Select2" class="headerlink" title="Select2"></a>Select2</h3><ul>
 <li><strong>Описание:</strong> Мощная библиотека для стилизации и расширения стандартных селектов (<code>&lt;select&gt;</code>).</li>
 <li><strong>Особенности:</strong> Поиск по списку, поддержка AJAX-запросов, множественный выбор, теги, кастомные шаблоны.</li>
 <li><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/select2/select2">https://github.com/select2/select2</a></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;select&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px;&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Опция 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>Опция 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>Опция 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#select&#x27;</span>).<span class="hljs-title function_">select2</span>(&#123;<br>  <span class="hljs-attr">placeholder</span>: <span class="hljs-string">&quot;Выберите опцию&quot;</span>,<br>  <span class="hljs-attr">allowClear</span>: <span class="hljs-literal">true</span><br>&#125;);<br></code></pre></td></tr></table></figure>
-<h2 id="4-Маски-для-текстовых-полей">4. Маски для текстовых полей</h2>
-<h3 id="jQuery-Mask-Plugin">jQuery Mask Plugin</h3>
-<ul>
+
+<h2 id="4-Маски-для-текстовых-полей"><a href="#4-Маски-для-текстовых-полей" class="headerlink" title="4. Маски для текстовых полей"></a>4. Маски для текстовых полей</h2><h3 id="jQuery-Mask-Plugin"><a href="#jQuery-Mask-Plugin" class="headerlink" title="jQuery Mask Plugin"></a>jQuery Mask Plugin</h3><ul>
 <li><strong>Описание:</strong> Позволяет создавать маски ввода для любых текстовых полей.</li>
 <li><strong>Особенности:</strong> Поддержка различных форматов: телефоны, даты, валюты и т.д.</li>
 <li><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/igorescobar/jQuery-Mask-Plugin">https://github.com/igorescobar/jQuery-Mask-Plugin</a></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;phone&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#phone&#x27;</span>).<span class="hljs-title function_">mask</span>(<span class="hljs-string">&#x27;+7 (999) 999-99-99&#x27;</span>);<br></code></pre></td></tr></table></figure>
-<h2 id="5-Календарь-выбор-даты">5. Календарь (выбор даты)</h2>
-<h3 id="flatpickr">flatpickr</h3>
-<ul>
+
+
+<h2 id="5-Календарь-выбор-даты"><a href="#5-Календарь-выбор-даты" class="headerlink" title="5. Календарь (выбор даты)"></a>5. Календарь (выбор даты)</h2><h3 id="flatpickr"><a href="#flatpickr" class="headerlink" title="flatpickr"></a>flatpickr</h3><ul>
 <li><strong>Описание:</strong> Очень легкий, быстрый и минималистичный. Не зависит от jQuery, можно использовать с чистым JS.</li>
 <li><strong>Особенности:</strong> Поддерживает диапазоны дат, время, локализацию, кастомные форматы. Настраиваемый внешний вид и события. Активно развивается и легко интегрируется.</li>
 <li><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/flatpickr/flatpickr">https://github.com/flatpickr/flatpickr</a></li>
 </ul>
 <p><strong>Пример использования:</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;datepicker&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">flatpickr</span>(<span class="hljs-string">&quot;#datepicker&quot;</span>, &#123;<br>  <span class="hljs-attr">dateFormat</span>: <span class="hljs-string">&quot;d.m.Y&quot;</span>,<br>  <span class="hljs-attr">locale</span>: <span class="hljs-string">&quot;ru&quot;</span> <span class="hljs-comment">// русская локализация</span><br>&#125;);<br></code></pre></td></tr></table></figure>
-<h2 id="Итог">Итог</h2>
-<p>Выбор конкретной библиотеки зависит от задач проекта и требуемого функционала. Все перечисленные инструменты активно поддерживаются и имеют подробную документацию, что облегчает интеграцию.</p>
+
+
+<h2 id="Итог"><a href="#Итог" class="headerlink" title="Итог"></a>Итог</h2><p>Выбор конкретной библиотеки зависит от задач проекта и требуемого функционала. Все перечисленные инструменты активно поддерживаются и имеют подробную документацию, что облегчает интеграцию.</p>
 
         </div>
       </div>
