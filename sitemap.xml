@@ -3,6 +3,19 @@
   
   <url>
     <loc>https://philla.ru/
+      2025/05/21/vnedrenie-mikrorazmetki-schema-dlya-osnovnykh-tipov-stranits-sayta/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-05-21
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
       2025/05/11/perekhvatyvaem-ajax-zaprosy-s-pomoshchyu-funktsii-xmlhttprequest/
     </loc>
     <changefreq>monthly</changefreq>
@@ -74,19 +87,6 @@
     
     <lastmod>
       2025-06-12
-    </lastmod>
-    
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://philla.ru/
-      2025/05/21/vnedrenie-mikrorazmetki-schema-dlya-osnovnykh-tipov-stranits-sayta/
-    </loc>
-    <changefreq>monthly</changefreq>
-    
-    <lastmod>
-      2025-05-21
     </lastmod>
     
     <priority>0.6</priority>
