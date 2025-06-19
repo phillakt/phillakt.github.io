@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <title>
+    
+      Модальное окно на js и css 
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Как реализовать модальное окно с плавным появлением и исчезновением на js и css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Модальное окно на js и css">
+<meta property="og:url" content="https://phillakt.github.io/2025/06/19/modalnoe-okno-js/">
+<meta property="og:site_name" content="Philla">
+<meta property="og:description" content="Как реализовать модальное окно с плавным появлением и исчезновением на js и css">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2025-06-19T20:04:40.000Z">
+<meta property="article:modified_time" content="2025-06-19T20:21:58.920Z">
+<meta property="article:author" content="Philla">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <link rel="icon" href="https://philla.ru/favicon.ico" type="image/x-icon">
+  
+
+  
+<link rel="stylesheet" href="/css/augmented-ui.min.css">
+
+  
+<link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+  <body>
+    <main class="main">
+      <section class="section-top">
+        
+    <header class="header" data-augmented-ui="bl-clip-x">
+      <div class="container">
+        <div class="header__grid">
+          <div class="header__logo">
+            <a href="/">
+              Philla
+            </a>
+          </div>
+          <div class="header__menu">
+            <ul>
+              
+                <li>
+                  <a href="/contacts/">
+                    Автор
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+          <section class="article-detail mt60 mb60">
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="/" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> 
+      </a>
+    </div>
+  </div>
+
+  <article class="mb60">
+    <div class="container-md">
+      <div class="article-detail__wrap" data-augmented-ui="tr-clip-x br-2-clip-y br-2-clip-y">
+
+          
+
+        <h1 class="article-detail__title">Модальное окно на js и css</h1>
+        <div class="article-detail__meta">
+          <div class="article-detail__date">2025-06-19</div>
+          <div class="article-detail__tags">
+            
+  <ul class="article__meta--tag-list" itemprop="keywords"><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="article__meta--tag-list-item"><a class="article__meta--tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+          </div>
+        </div>
+        <div class="article-detail__content">
+          <h2 id="Создаем-модальное-окно-с-плавным-появлением-и-скрытием">Создаем модальное окно с плавным появлением и скрытием</h2>
+<p>В этой статье рассмотрим, как реализовать модальное окно с плавным появлением и исчезновением, используя CSS-переходы для свойств <code>opacity</code> и <code>visibility</code>, а также управление свойством <code>display</code> через JavaScript. Такой подход позволяет добиться плавной анимации и при этом полностью скрывать элемент из потока и взаимодействия.</p>
+<h2 id="Код-Html">Код Html</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;modal-open-btn&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Открыть модальное окно<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;modal-overlay&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;overlay&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;dialog&quot;</span> <span class="hljs-attr">aria-modal</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;modal-title&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">&quot;modal-desc&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dialog&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dialog__close&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Закрыть модальное окно&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content-wrapper&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;modal-title&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content-title&quot;</span>&gt;</span>Example Title<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;modal-desc&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content-subtitle&quot;</span>&gt;</span><br>                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="Код-CSS">Код CSS</h2>
+<ol>
+<li>.overlay — это затемнённый фон, который занимает весь экран и центрирует модальное окно.</li>
+<li>Изначально .overlay невидим и не реагирует на события, благодаря opacity: 0, visibility: hidden и pointer-events: none.</li>
+<li>Переходы (transition) применены к opacity и visibility для плавной анимации появления и скрытия.</li>
+<li>При добавлении класса .active меняются свойства:
+<ul>
+<li>opacity на 1 — элемент становится непрозрачным.</li>
+<li>visibility на visible — элемент видим для браузера.</li>
+<li>pointer-events на auto — элемент начинает принимать клики.</li>
+<li>z-index повышается, чтобы окно было поверх других элементов.</li>
+</ul>
+</li>
+<li>Кнопка закрытия стилизована отдельным фоновым SVG и меняет яркость при наведении/фокусе для удобства пользователя.</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* Основной контейнер модального окна */</span><br><span class="hljs-selector-class">.overlay</span> &#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">6</span>, <span class="hljs-number">0.4</span>);<br>    <span class="hljs-attribute">display</span>: flex;<br>    <span class="hljs-attribute">justify-content</span>: center;<br>    <span class="hljs-attribute">align-items</span>: flex-start;<br>    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">100px</span>;<br>    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">visibility</span>: hidden;<br>    <span class="hljs-attribute">pointer-events</span>: none;<br>    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.3s</span> ease, visibility <span class="hljs-number">0.3s</span> ease;<br>    <span class="hljs-attribute">box-sizing</span>: border-box;<br>    <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">999999999</span>;<br>&#125;<br><br><span class="hljs-comment">/* Активное состояние модального окна */</span><br><span class="hljs-selector-class">.overlay</span><span class="hljs-selector-class">.active</span> &#123;<br>    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;<br>    <span class="hljs-attribute">visibility</span>: visible;<br>    <span class="hljs-attribute">pointer-events</span>: auto;<br>    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1000</span>;<br>&#125;<br><br><span class="hljs-comment">/* Контент модального окна */</span><br><span class="hljs-selector-class">.dialog</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fefefe</span>;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">15px</span>;<br>    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#888</span>;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">box-sizing</span>: border-box;<br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">6px</span>;<br>    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">4px</span> <span class="hljs-number">12px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.15</span>);<br>&#125;<br><br><span class="hljs-comment">/* Кнопка закрытия */</span><br><span class="hljs-selector-class">.dialog__close</span> &#123;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">right</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">22px</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">22px</span>;<br>    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; width=&#x27;22&#x27; height=&#x27;22&#x27; viewBox=&#x27;0 0 22 22&#x27; fill=&#x27;none&#x27;%3E%3Cpath d=&#x27;M1.57785 20.4223C1.6417 20.4863 1.71752 20.537 1.80098 20.5716C1.88445 20.6062 1.97391 20.624 2.06426 20.624C2.1546 20.624 2.24407 20.6062 2.32753 20.5716C2.41099 20.537 2.48681 20.4863 2.55066 20.4223L11 11.973L19.4528 20.4223C19.5819 20.5513 19.7568 20.6238 19.9393 20.6238C20.1217 20.6238 20.2967 20.5513 20.4257 20.4223C20.5547 20.2933 20.6271 20.1184 20.6271 19.9359C20.6271 19.7535 20.5547 19.5785 20.4257 19.4495L11.9728 11.0001L20.4222 2.54734C20.5512 2.41833 20.6237 2.24337 20.6237 2.06093C20.6237 1.87849 20.5512 1.70353 20.4222 1.57452C20.2932 1.44552 20.1183 1.37305 19.9358 1.37305C19.7534 1.37305 19.5784 1.44552 19.4494 1.57452L11 10.0273L2.54722 1.57796C2.4157 1.46533 2.24653 1.40648 2.0735 1.41316C1.90047 1.41984 1.73634 1.49157 1.6139 1.61401C1.49146 1.73645 1.41973 1.90058 1.41305 2.07361C1.40636 2.24664 1.46522 2.41582 1.57785 2.54734L10.0272 11.0001L1.57785 19.453C1.4498 19.5818 1.37793 19.756 1.37793 19.9376C1.37793 20.1193 1.4498 20.2935 1.57785 20.4223Z&#x27; fill=&#x27;%23E5E5E5&#x27;/%3E%3C/svg%3E&quot;</span>);<br>    <span class="hljs-attribute">background-repeat</span>: no-repeat;<br>    <span class="hljs-attribute">background-position</span>: center;<br>    <span class="hljs-attribute">border</span>: none;<br>    <span class="hljs-attribute">cursor</span>: pointer;<br>    <span class="hljs-attribute">transition</span>: filter <span class="hljs-number">0.2s</span> ease;<br>&#125;<br><br><span class="hljs-selector-class">.dialog__close</span><span class="hljs-selector-pseudo">:hover</span>,<br><span class="hljs-selector-class">.dialog__close</span><span class="hljs-selector-pseudo">:focus</span> &#123;<br>    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">brightness</span>(<span class="hljs-number">0.7</span>);<br>    <span class="hljs-attribute">outline</span>: none;<br>&#125;<br><br><span class="hljs-comment">/* Контейнер для текста */</span><br><span class="hljs-selector-class">.content-wrapper</span> &#123;<br>    <span class="hljs-attribute">display</span>: flex;<br>    <span class="hljs-attribute">flex-direction</span>: column;<br>    <span class="hljs-attribute">box-sizing</span>: border-box;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">20px</span>;<br>&#125;<br><br><span class="hljs-comment">/* Заголовок */</span><br><span class="hljs-selector-class">.content-title</span> &#123;<br>    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2rem</span>;<br>    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">12px</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#222</span>;<br>&#125;<br><br><span class="hljs-comment">/* Текст под заголовком */</span><br><span class="hljs-selector-class">.content-subtitle</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1rem</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#555</span>;<br>    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Код-JavaScript">Код JavaScript</h2>
+<ol>
+<li>
+<p>Открытие модального окна:</p>
+<ul>
+<li>1.1 Устанавливаем display: flex, чтобы элемент появился в DOM и стал видимым (но с opacity=0).</li>
+<li>1.2 Через requestAnimationFrame добавляем класс .active, который запускает CSS-переход к opacity=1.</li>
+<li>1.3 Перемещаем фокус на кнопку закрытия для удобства клавиатурных пользователей.</li>
+</ul>
+</li>
+<li>
+<p>Закрытие модального окна:</p>
+<ul>
+<li>2.1 Убираем класс .active, что запускает плавный переход opacity к 0.</li>
+<li>2.2 Слушаем событие transitionend для свойства opacity.</li>
+<li>2.3 После завершения перехода устанавливаем display: none, чтобы полностью скрыть элемент и убрать из потока.</li>
+<li>2.4 Возвращаем фокус на кнопку открытия.</li>
+</ul>
+</li>
+<li>
+<p>Дополнительно:</p>
+<ul>
+<li>3.1 Клик по затемненному фону (области .overlay) закрывает окно.</li>
+<li>3.2 Нажатие клавиши Escape закрывает окно, если оно открыто.</li>
+<li>3.3 Обработчики событий удаляются после использования, чтобы избежать утечек памяти.</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs javascript">(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> overlay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;modal-overlay&#x27;</span>);<br>    <span class="hljs-keyword">const</span> openBtn = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;modal-open-btn&#x27;</span>);<br>    <span class="hljs-keyword">const</span> closeBtn = overlay.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.dialog__close&#x27;</span>);<br><br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">openModal</span>(<span class="hljs-params"></span>) &#123;<br>        overlay.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;flex&#x27;</span>; <span class="hljs-comment">// Показываем элемент (убираем display: none)</span><br>        <span class="hljs-comment">// Ждем следующего кадра, чтобы браузер применил display</span><br>        <span class="hljs-title function_">requestAnimationFrame</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>            overlay.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&#x27;active&#x27;</span>); <span class="hljs-comment">// Запускаем анимацию появления</span><br>            closeBtn.<span class="hljs-title function_">focus</span>(); <span class="hljs-comment">// Перемещаем фокус на кнопку закрытия</span><br>        &#125;);<br>    &#125;<br><br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">closeModal</span>(<span class="hljs-params"></span>) &#123;<br>        overlay.<span class="hljs-property">classList</span>.<span class="hljs-title function_">remove</span>(<span class="hljs-string">&#x27;active&#x27;</span>); <span class="hljs-comment">// Запускаем анимацию скрытия</span><br>        <span class="hljs-comment">// Ждем окончания перехода opacity, чтобы скрыть элемент полностью</span><br>        overlay.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;transitionend&#x27;</span>, <span class="hljs-keyword">function</span> <span class="hljs-title function_">handler</span>(<span class="hljs-params">event</span>) &#123;<br>            <span class="hljs-keyword">if</span> (event.<span class="hljs-property">propertyName</span> === <span class="hljs-string">&#x27;opacity&#x27;</span>) &#123;<br>                overlay.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>; <span class="hljs-comment">// Скрываем элемент из DOM-потока</span><br>                openBtn.<span class="hljs-title function_">focus</span>(); <span class="hljs-comment">// Возвращаем фокус на кнопку открытия</span><br>                overlay.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#x27;transitionend&#x27;</span>, handler); <span class="hljs-comment">// Убираем обработчик</span><br>            &#125;<br>        &#125;);<br>    &#125;<br><br>    openBtn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, openModal);<br>    closeBtn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, closeModal);<br><br>    <span class="hljs-comment">// Закрываем окно при клике по затемненному фону</span><br>    overlay.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (event.<span class="hljs-property">target</span> === overlay) &#123;<br>            <span class="hljs-title function_">closeModal</span>();<br>        &#125;<br>    &#125;);<br><br>    <span class="hljs-comment">// Закрываем окно по нажатию клавиши Escape</span><br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;keydown&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (event.<span class="hljs-property">key</span> === <span class="hljs-string">&#x27;Escape&#x27;</span> &amp;&amp; overlay.<span class="hljs-property">classList</span>.<span class="hljs-title function_">contains</span>(<span class="hljs-string">&#x27;active&#x27;</span>)) &#123;<br>            <span class="hljs-title function_">closeModal</span>();<br>        &#125;<br>    &#125;);<br>&#125;)();<br></code></pre></td></tr></table></figure>
+<h2 id="Итог">Итог</h2>
+<p>Такой подход позволяет:</p>
+<ul>
+<li>Плавно анимировать появление и скрытие модального окна.</li>
+<li>Использовать display: none для полного исключения элемента из потока и отключения взаимодействия.</li>
+<li>Обеспечить доступность и удобство для пользователей клавиатуры.</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="container-md">
+    <div class="article-detail__back_link mb60">
+      <a href="/" class="btn btn__back--l-arrow">
+        <span class="btn__back--l-arrow-ico">&lt;</span> 
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Модальное окно на js и css",
+  "description": "Как реализовать модальное окно с плавным появлением и исчезновением на js и css",
+  "author": {
+    "@type": "Person",
+    "name": "Philla",
+    "url": "https://philla.ru/contacts/"
+  },
+  "datePublished": "Thu Jun 19 2025 23:04:40 GMT+0300",
+  "dateModified": "Thu Jun 19 2025 23:21:58 GMT+0300",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Личный блог с заметками для повседневной работы, ускоряющими рутинные задачи",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://philla.ru/images/logo/logo.svg"
+    }
+  }
+}
+</script>
+
+      </section>
+
+      <section class="section-bottom">
+    <footer class="footer pt80 pb100" data-augmented-ui="b-clip-x tr-clip-x">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo mb30">
+                        <a href="/">
+                            Philla
+                          </a>
+                    </div>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__menu">
+                        <ul>
+                            
+                                <li>
+                                  <a href="/contacts/">
+                                    Автор
+                                  </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</section>
+    </main>
+
+    
+      
+<script src="/js/highlight.min.js"></script>
+
+    
+    <script src="/js/main.min.js"></script>
+
+    
+  </body>
+
+</html>

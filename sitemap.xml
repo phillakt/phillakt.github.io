@@ -3,6 +3,19 @@
   
   <url>
     <loc>https://philla.ru/
+      2025/06/19/modalnoe-okno-js/
+    </loc>
+    <changefreq>monthly</changefreq>
+    
+    <lastmod>
+      2025-06-19
+    </lastmod>
+    
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://philla.ru/
       2025/05/21/vnedrenie-mikrorazmetki-schema-dlya-osnovnykh-tipov-stranits-sayta/
     </loc>
     <changefreq>monthly</changefreq>
